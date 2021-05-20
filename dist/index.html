@@ -1,17 +1,66 @@
 <!DOCTYPE html>
+
 <head>
     <title>test</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+
+
     <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-blue-100">
-    <button class="bg-blue text-white font-bold p-1">test</button>
-    <div class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-        <div class="flex-shrink-0">
-            <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
-        </div>
-        <div>
-            <div class="text-xl font-medium text-black">ChitChat</div>
-            <p class="text-gray-500">You have a new message!</p>
-        </div>
+
+<body class="bg-gray-800">
+    <header class="bg-gray-900 shadow-sm w-full  top-0 ">
+        <div class="max-auto  px-8 py-4">
+            <div class="text-center">
+                <div class="app-name ">
+                    <h1 class="text-blue-400 text-3xl font-sans font-bold">FREDERICK OLD</h1>
+                    <span class="text-xs">Game Developer</span>
+                </div>
+            </div>
+    </header>
+
+    <div class="flex flex-col items-center m-auto p-2" id="contents">
+        
     </div>
+
+    <script type="text/babel">
+        function GridElement({title, text, imgUrl}) {
+            const [expand, setExpand] = React.useState(false)
+            return (
+                <div className="rounded overflow-hidden bg-gray-900 shadow-lg border-t-8 border-green-400">
+                    <img className="w-full" src={imgUrl} alt="Mountain"/>
+                    <div className="px-6 py-4">
+                        <div className="font-bold text-xl text-blue-300 mb-2">{title}</div>
+                        <p className="text-gray-300 text-base">
+                            {text}
+                        </p>
+                    </div>
+                    <div className="px-6 pt-4 pb-2">
+                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
+                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
+                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
+                    </div>
+                </div>
+            )
+        }
+    
+        function App() {
+            console.log("render");
+            return (
+                <div id="contents" className="flex grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 auto-cols-min auto-rows-min">
+                    {GridElement({title: "Test Title", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis distinctio fuga corporis assumenda eos repellendus laborum, amet facere temporibusmagnampraesentiumaccusantium rerum cumque suscipit in voluptatem nihil totam? Tempore?", imgUrl:"../img/genbot.png"})}
+                    {GridElement({title: "Test Title", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis distinctio fuga corporis assumenda eos repellendus laborum, amet facere temporibus magnam praesentium accusantium rerum cumque suscipit in voluptatem nihil totam? Tempore?", imgUrl:"../img/genbot.png"})}
+                    {GridElement({title: "Test Title", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis distinctio fuga corporis assumenda eos repellendus laborum, amet facere temporibus magnam praesentium accusantium rerum cumque suscipit in voluptatem nihil totam? Tempore?", imgUrl:"../img/stove.png"})}
+                    {GridElement({title: "Test Title", text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis distinctio fuga corporis assumenda eos repellendus laborum, amet facere temporibus magnam praesentium accusantium rerum cumque suscipit in voluptatem nihil totam? Tempore?", imgUrl:"../img/genbot.png"})}
+                </div>
+            )
+        }
+    
+        ReactDOM.render(<App />, document.getElementById('contents'))
+      </script>
 </body>
