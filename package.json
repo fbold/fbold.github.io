@@ -1,22 +1,22 @@
 {
-  "name": "Vurak.github.io",
+  "name": "vurak.github.io",
   "version": "1.0.0",
-  "description": "You can use the [editor on GitHub](https://github.com/Vurak/Vurak.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.\r asdasdasd\r Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.",
+  "description": "You can use the [editor on GitHub](https://github.com/Vurak/vurak.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.\r asdasdasd\r Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.",
   "main": "index.js",
   "scripts": {
     "build:css": "tailwind build src/style.css -o dist/style.css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vurak/Vurak.github.io.git"
+    "url": "git+https://github.com/Vurak/vurak.github.io.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Vurak/Vurak.github.io/issues"
+    "url": "https://github.com/Vurak/vurak.github.io/issues"
   },
-  "homepage": "https://github.com/Vurak/Vurak.github.io#readme",
+  "homepage": "https://github.com/Vurak/vurak.github.io#readme",
   "dependencies": {
     "tailwindcss": "^2.1.2"
   }
