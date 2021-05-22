@@ -26,7 +26,9 @@ module.exports = {
         }
       },
       height: {
-        'full2': '150%'
+        'full1.5': '150%',
+        'full2': '200%',
+        'full2.5': '250%',
       },
       margin: {
         '100': '25rem',

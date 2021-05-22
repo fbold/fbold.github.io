@@ -20,17 +20,103 @@
 
     <script type="text/babel">
         
+        function Bar(props) {
+            console.log("rendered bar")
+            return (
+                <div 
+                className={`flex rellax w-full z-0 bg-indigo-${Math.abs(props.c)-1+"00"} mx-px md:mx-0.2 rounded${props.loc ? "-" + props.loc : ""}-lg`} 
+                style={{'height' : `${props.h}%`}}
+                data-rellax-speed={`${props.s}`}/>
+            )
+        }
+
+        function RandInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        
+        var barsTop = []
+        var barsBot = []
+        var heights = ["10", "1/6", "1/5", "1/3", "2/5", "1/2", "3/5", "2/3", "3/4", "4/5", "5/6", "full"]
+        var colors = [6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9]
+        
+
+        function Landing() {
+            const [mult, setMult] = React.useState(10)
+
+            React.useEffect(() => {
+                new Rellax('.rellax')
+            }, [])
+
+            let n = Math.floor(window.innerWidth/7)
+            console.log(n)
+
+            barsTop = []
+            barsBot = []
+
+            for (let i = 1; i <= n; i++) {
+                let rs = RandInt(5,10)
+                let rh = 100 * (i / (n))
+                barsTop.push(<Bar h={rh} loc="b" s={rs} c={colors[rs]}/>)
+                barsBot.push(<Bar h={rh} loc="t" s={-rs} c={colors[rs]}/>)
+            }
+            barsBot.reverse()
+            return(
+                <section className="h-screen w-full">
+                    <div className="h-full2">
+                        <div className="flex sticky top-0 justify-center items-center h-screen w-auto text-center">
+
+                            <header className="shadow-sm absolute w-auto bg-purple-even-darker z-0">
+                                    <div className="relative text-center object-center content-center items-center p-4">
+                                        <div className="flex relative w-full h-2/3 items-start z-10">
+                                            </div>
+                                            {/**<input type="range" min="1" max="500" value={mult} onChange={event => { setMult(event.target.value)}} className="hidden md:inline h-5 slider rounded-lg bg-indigo-200"
+                                        />**/}
+                                        <span className="text-lg font-bold text-indigo-200">Hi, I'm Fred</span>
+                                        <h1 className="text-indigo-400 text-3xl font-sans font-extrabold">welcome to my portfolio</h1>
+                                        <span className="text-sm font-bold text-indigo-200 animate-pulse">(keep scrolling)</span>
+                                        <svg className="animate-pulse relative h-5 w-full fill-current text-indigo-200" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                                        </svg>
+                                    </div>
+                            </header>
+
+                            <div class="flex absolute w-full h-full pb-0 top-0 items-start z-0">
+                                {barsTop}
+                            </div>
+                            <div class="flex absolute w-full h-full pt-0 bottom-0 items-end z-0 overflow-y-hidden">
+                                {barsBot}
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            )
+        }
+
         function Title({text='', children}) {
             console.log("rendered title")
             return (
-                <div className="relative flow flex-wrap h-20 w-full font-bold">
+                <div className="relative flow flex-wrap h-20 w-full content-center items-center text-center font-bold">
                     <div className="w-full px-6 py-4">
                         <div className="font-bold text-3xl text-indigo-400">{children}</div>
                         <p className="text-gray-300 text-base">
                             {text}
                         </p>
-                        <hr className="w-full border-3 mt-1"/>
+                        <hr className="m-auto self-center w-1/2 border-1 mt-1"/>
                     </div>
+                </div>
+            )
+        }
+
+        function TextElement(props) {
+            return(
+                <div className={`px-6 py-3 ${props.c ? 'text-center' : ''}`}>
+                    {props.title ? <div className="font-bold text-xl text-indigo-400 mb-2 z-20">{props.title}</div> : null}
+                    <p className="relative text-gray-300 font-bold text-base z-20">
+                        {props.children}
+                    </p>
                 </div>
             )
         }
@@ -44,12 +130,7 @@
                         <div>
                             <img className="object-cover h-48 w-full min-w-0 max-w-lg md:w-full md:h-full" src={imgUrl} alt="Mountain"/>
                         </div>
-                        <div className="px-6 py-4">
-                            <div className="font-bold text-xl text-indigo-400 mb-2">{title}</div>
-                            <p className="text-gray-300 text-base">
-                                {children}
-                            </p>
-                        </div>
+                        <TextElement title={title}>{children}</TextElement>
                     </div>
                 </div>
             )
@@ -78,28 +159,30 @@
             
             for (let i = 1; i <= n; i++) {
                 let rh = RandInt(1,7)
-                let rs = RandInt(2,9)
-                let rc = RandInt(0,heights.colors-1)
-                let rt = Math.round(Math.random() * 100)
-                let rl = Math.round(Math.random() * 99)
-                dropsFront.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="20" o="50"/>)
-                
-            }
-            for (let i = 1; i <= n; i++) {
-                let rh = RandInt(3,10)
                 let rs = RandInt(2,12)
                 let rc = RandInt(0,heights.colors-1)
                 let rt = Math.round(Math.random() * 100)
+                let rl = Math.round(Math.random() * 99)
+                dropsFront.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="20" o="20"/>)
+                
+            }
+            for (let i = 1; i <= n; i++) {
+                let rh = RandInt(1,7)
+                let rs = RandInt(2,12)
+                let rc = RandInt(0,heights.colors-1)
+                let rt = Math.round(Math.random() * 100) + 50
                 let rl = Math.round(Math.random() * 100)
-                dropsBack.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="0"/>)
+                dropsBack.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="0" o="60"/>)
             }
 
             return (
                 <section className="h-screen">
                     <div className="h-full2 relative items-end justify-items-end ">
-                        <div className="relative flow flex-row items-end top-0 h-1/3 w-full flex-wrap"></div>
+                        <div className="relative flow flex-row items-end top-0 h-1/2 w-full flex-wrap"></div>
                         <div className="rain-rellax-wrapper relative flow flex-row items-end bg-purple-even.darker bottom-0 w-full">
                             {dropsFront}{dropsBack}
+                            <Title>About me</Title>
+                            <TextElement c="true"> I'm a young game and web developer looking to get into the industry and put my skills to use. Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br/>Possimus dolor et dolores rem minima illum assumenda odio dolorum cum? Totam facilis nobis ratione porro veniam<br/> accusantium eum, repudiandae recusandae minus.</TextElement>
                             <Title>Projects</Title>
                             <GridElement title="LMGTFY Firefox Add-on" imgUrl="../img/stove.png"> 
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
@@ -135,118 +218,6 @@
                         </div>
                     </div>
                 </section>
-            )
-        }
-        
-        
-
-        function Bar(props) {
-            console.log("rendered bar")
-            return (
-                <div 
-                className={`flex rellax w-full z-0 bg-indigo-${Math.abs(props.c)-1+"00"} mx-px md:mx-0.2 rounded${props.loc ? "-" + props.loc : ""}-lg`} 
-                style={{'height' : `${props.h}%`}}
-                data-rellax-speed={`${props.s}`}/>
-            )
-        }
-
-        function RandInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        
-        var barsTop = []
-        var barsBot = []
-        var heights = ["10", "1/6", "1/5", "1/3", "2/5", "1/2", "3/5", "2/3", "3/4", "4/5", "5/6", "full"]
-        var speeds = [4, 5, 6, 7, 8, 9, 10]
-        var colors = [6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 9]
-        
-
-        function Landing() {
-            console.log("rendered landing")
-            const [mult, setMult] = React.useState(10)
-
-            React.useEffect(() => {
-                new Rellax('.rellax')
-            }, [])
-
-            let n = Math.floor(window.innerWidth/7)
-            console.log(n)
-
-            barsTop = []
-            barsBot = []
-
-            for (let i = 1; i <= n; i++) {
-                let r = RandInt(0,heights.length-1)
-                let rs = RandInt(0,speeds.length-1)
-                let rc = 100 * (i / (n))**(mult/100)
-                barsTop.push(<Bar h={rc} loc="b" s={speeds[rs]} c={colors[rs]}/>)
-                barsBot.push(<Bar h={rc} loc="t" s={-speeds[rs]} c={colors[rs]}/>)
-            }
-            barsBot.reverse()
-            return(
-                <section className="h-screen w-full">
-                    <div className="h-full2">
-                        <div className="flex sticky top-0 justify-center items-center h-screen w-auto text-center">
-                            
-                           
-                            
-                            {/**
-                            <div className="flex absolute w-full h-2/3 pb-0 top-0 items-start z-10">
-                                <input type="text" value={mult} onChange={event => {setMult(event.target.value)}} className="border-4"/>
-                            </div>**/}
-
-                            <header className="shadow-sm absolute w-auto bg-purple-even-darker z-10 border-indigo-600 border-10 rounded-full">
-                                    <div className="relative text-center items-center p-4">
-                                        <div className="flex relative w-full h-2/3 items-start z-10">
-                                            </div>
-                                            <input type="range" min="1" max="500" value={mult} onChange={event => { setMult(event.target.value)}} className="hidden md:inline h-5 slider rounded-lg bg-indigo-200"
-                                            />
-                                        <h1 className="text-indigo-400 text-3xl font-sans font-extrabold">FREDERICK OLD</h1>
-                                        <span className="text-lg font-bold text-indigo-200">Turd Monger</span>
-                                    </div>
-                            </header>
-
-                            <div class="flex absolute w-full h-1/2 pb-0 top-0 items-start z-0">
-                                {barsTop}
-                            </div>
-                            <div class="flex absolute w-full h-1/2 pt-0 bottom-0 items-end z-0 overflow-y-hidden">
-                                {barsBot}
-                            </div>
-
-                        </div>
-                    </div>
-                </section>
-            )
-        }
-
-        function Headers(sidebar, setSidebar) {
-            console.log("rendered header")
-            return(
-                [
-                    <header className="shadow-sm w-full top-0">
-                        <div className="max-auto px-8 py-4">
-                            <div className="text-center">
-                                <div className="app-name ">
-                                    <h1 className="text-green-300 text-3xl font-sans font-bold">FREDERICK OLD</h1>
-                                    <span className="text-lg text-blue-300">Game Developer</span>
-                                </div>
-                            </div>
-                        </div>
-                    </header>,
-                    <div className="bg-gray-800 text-gray-100 flex justify-between md:hidden">
-                        {/* LOGO */}
-                        <a href="#" className="block p-4 text-white font-bold">Better Dev</a>
-
-                        {/* MOBILE MENU BUTTON */}
-                        <button className="mobile-menu-button p-4 focus:outline-none focus:bg-gray-700" onClick={() => {setSidebar(!sidebar); console.log(sidebar)}}>
-                            <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                        </button>
-                    </div>
-                ]
             )
         }
 
