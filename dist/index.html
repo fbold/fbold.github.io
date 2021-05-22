@@ -39,7 +39,7 @@
             console.log("rendered grid element")
             const [expand, setExpand] = React.useState(false)
             return (
-                <div className="relative block h-200 font-bold">
+                <div className="relative block h-200 font-bold" data-rellax-speed="2">
                     <div className="grid grid-flow-row-dense md:grid-flow-col rounded w-auto overflow-hidden my-5 mx-2 md:mx-5 bg-gray-900 shadow-xl  border-green-400 border-t-6 md:border-t-0 md:border-l-8 md:hover:border-l-20 hover:bg-gray-700 duration-200">
                         <div>
                             <img className="object-cover h-48 w-full min-w-0 max-w-lg md:w-full md:h-full" src={imgUrl} alt="Mountain"/>
@@ -54,16 +54,74 @@
                 </div>
             )
         }
-    
+
+        function Drop({o="100", ...props}) {
+            console.log("rendered bar")
+            return (
+                <div 
+                className={`flex opacity-${o} absolute rellax-rain w-2 z-${props.z} bg-indigo-${(props.c-1)*100} mx-px md:mx-0.2 rounded-lg`} 
+                style={{'height' : `${props.h}rem`, 'top': `${props.t}%`, 'left': `${props.l}%`}}
+                data-rellax-speed={`${props.s}`}/>
+            )
+        }
+
+        var dropsFront = []
+        var dropsBack = []
+
+
         function Contents() {
-            console.log("rendered contents");
+            React.useEffect(() => {
+                new Rellax('.rellax-rain')
+            }, [])
+
+            let n = Math.floor(window.innerWidth/30)
+            
+            for (let i = 1; i <= n; i++) {
+                let rh = RandInt(1,7)
+                let rs = RandInt(2,9)
+                let rc = RandInt(0,heights.colors-1)
+                let rt = Math.round(Math.random() * 100)
+                let rl = Math.round(Math.random() * 99)
+                dropsFront.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="20" o="50"/>)
+                
+            }
+            for (let i = 1; i <= n; i++) {
+                let rh = RandInt(3,10)
+                let rs = RandInt(2,12)
+                let rc = RandInt(0,heights.colors-1)
+                let rt = Math.round(Math.random() * 100)
+                let rl = Math.round(Math.random() * 100)
+                dropsBack.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="0"/>)
+            }
+
             return (
                 <section className="h-screen">
                     <div className="h-full2 relative items-end justify-items-end ">
                         <div className="relative flow flex-row items-end top-0 h-1/3 w-full flex-wrap"></div>
-                        <div className="relative flow flex-row items-end bg-purple-even.darker bottom-0 w-full">
+                        <div className="rain-rellax-wrapper relative flow flex-row items-end bg-purple-even.darker bottom-0 w-full">
+                            {dropsFront}{dropsBack}
                             <Title>Projects</Title>
                             <GridElement title="LMGTFY Firefox Add-on" imgUrl="../img/stove.png"> 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
+                                enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
+                                sint atque rerum modi.    
+                            </GridElement>
+                            <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
+                                enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
+                                sint atque rerum modi.    
+                            </GridElement>
+                            <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
+                                enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
+                                sint atque rerum modi.    
+                            </GridElement>
+                            <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
+                                enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
+                                sint atque rerum modi.    
+                            </GridElement>
+                            <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                 enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                 sint atque rerum modi.    
@@ -80,7 +138,7 @@
             )
         }
         
-        const rellax = new Rellax('.relax')
+        
 
         function Bar(props) {
             console.log("rendered bar")
@@ -146,7 +204,7 @@
                                             <input type="range" min="1" max="500" value={mult} onChange={event => { setMult(event.target.value)}} className="hidden md:inline h-5 slider rounded-lg bg-indigo-200"
                                             />
                                         <h1 className="text-indigo-400 text-3xl font-sans font-extrabold">FREDERICK OLD</h1>
-                                        <span className="text-lg font-bold text-indigo-200">Game Developer</span>
+                                        <span className="text-lg font-bold text-indigo-200">Turd Monger</span>
                                     </div>
                             </header>
 
