@@ -20,6 +20,8 @@
 
     <script type="text/babel">
 
+        var root = document.getElementById('root')
+
         function RandInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
@@ -32,13 +34,28 @@
         
 
         function Landing() {
-            const [mult, setMult] = React.useState(10)
+            const [scroll, setScroll] = React.useState(false)
+            
+            
 
             React.useEffect(() => {
                 new Rellax('.rellax', {
                     breakpoints: [640, 768, 1024]
                 })
-            }, [])
+                const handleScroll = () => {
+                    if (window.scrollY != 0) {
+                        setScroll(true);
+                    } else setScroll(false);
+                    
+                    console.log(scroll);
+                };
+
+                window.addEventListener("scroll", handleScroll, { passive: true });
+
+                return () => window.removeEventListener("scroll", handleScroll);
+                
+            }, [scroll])
+
 
             function Bars({minSpeed, maxSpeed, color, i}) {
                 var barsTop = []
@@ -47,7 +64,6 @@
                 let n = Math.floor(window.innerWidth/25)
                 
                 function Bar(props) {
-                    console.log("rendered bar")
                     
                     return (
                         
@@ -88,13 +104,13 @@
                 <section className="h-screen w-full">
                     <div className="h-full2">
                         <div className="flex sticky top-0 justify-center items-center h-screen w-auto text-center">
-
-                            <header className="shadow-sm absolute w-auto bg-purple-even-darker z-0">
+                            {scroll ? null : 
+                            <svg className="animate-pulse relative h-10 w-full fill-current text-indigo-200 z-20" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+                            </svg>}
+                            
+                            <header className="absolute w-auto z-0">
                                     <div className="relative text-center object-center content-center items-center p-4">
-                                        <div className="flex relative w-full h-2/3 items-start z-10">
-                                            </div>
-                                            {/**<input type="range" min="1" max="500" value={mult} onChange={event => { setMult(event.target.value)}} className="hidden md:inline h-5 slider rounded-lg bg-indigo-200"
-                                        />**/}
                                         <span className="text-lg font-bold text-indigo-200">Hi, I'm Fred</span>
                                         <h1 className="text-indigo-400 text-3xl font-sans font-extrabold">welcome to my portfolio</h1>
                                         <span className="text-sm font-bold text-indigo-200 animate-pulse">(keep scrolling)</span>
@@ -114,7 +130,6 @@
         }
 
         function Title({text='', children}) {
-            console.log("rendered title")
             return (
                 <div className="relative flow flex-wrap h-20 w-full content-center items-center text-center font-bold">
                     <div className="w-full px-6 py-4">
@@ -140,11 +155,10 @@
         }
 
         function GridElement({title, imgUrl, span=1, children}) {
-            console.log("rendered grid element")
             const [expand, setExpand] = React.useState(false)
             return (
-                <div className={`col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold`} data-rellax-speed="2">
-                    <div className="rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-gray-900 shadow-xl  border-indigo-400 border-t-6 md:border-t-0 md:border-l-8 md:hover:border-l-20 hover:bg-gray-700 duration-200">
+                <div className={`flex items-center col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold`} data-rellax-speed="2">
+                    <div className="flex items-start rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-gray-900 shadow-xl  border-indigo-400 border-t-6 md:border-t-0 md:border-l-8 md:hover:border-l-20 hover:bg-gray-700 duration-200">
                         
                         <TextElement title={title}>{children}</TextElement>
                     </div>
@@ -153,7 +167,6 @@
         }
 
         function Drop({o="100", ...props}) {
-            console.log("rendered bar")
             return (
                 <div 
                 className={`flex opacity-${o} absolute rellax-rain w-4 z-${props.z} bg-indigo-${(props.c-1)*100} mx-px md:mx-0.2 rounded-lg`} 
@@ -195,14 +208,21 @@
                 <section className="h-screen">
                     <div className="h-full2 relative items-end justify-items-end ">
                         <div className="relative flow flex-row items-end top-0 h-1/2 w-full flex-wrap"></div>
-                        <div className="rain-rellax-wrapper relative flow flex-row items-end bg-purple-even.darker bottom-0 w-full">
+                        <div className="relative flow flex-row items-end bg-purple-even-darker bottom-0 w-full">
                             {dropsFront}{dropsBack}
                             <Title>About me</Title>
-                            <TextElement c="true"> I'm a young game and web developer looking to get into the industry and put my skills to use. Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br/>Possimus dolor et dolores rem minima illum assumenda odio dolorum cum? Totam facilis nobis ratione porro veniam<br/> accusantium eum, repudiandae recusandae minus.</TextElement>
+                            <TextElement c="true"> 
+                                I'm a young programmer and game developer looking to get into the industry and put my skills to use.
+                                I have always loved programming and 
+                            </TextElement>
                             <Title>Projects</Title>
                             <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-8 md:px-20 w-full h-screen">
                                 <GridElement title="Dog Nights" imgUrl="../img/stove.png" span={3}> 
-                                    A solo project made in the Unity3D engine
+                                    Dog Nights is my abitious first person survival game I am currently developing in the Unity game engine.
+                                    It is a story about the death of your dog, Paddy ... and Paddy's body's subsequent overtaking by a magicals crystal
+                                    that lands on your front lawn, you must battle off hordes of night creatures that try to desroy the crystal, 
+                                    and by extension, the only thing that remains of your beloved Paddy.
+                                    <div className="flex items-center overflow-hidden max-h-96 mt-5"><img src="../img/stove.png" alt="" className="w-full h-auto "/></div>
                                 </GridElement>
                                 <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
@@ -283,7 +303,6 @@
             )
         }
 
-        console.log("rendered")
         ReactDOM.render(<App />, document.getElementById('root'))
       </script>
 </body>
