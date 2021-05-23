@@ -21,6 +21,7 @@
     <script type="text/babel">
 
         var root = document.getElementById('root')
+    
 
         function RandInt(min, max) {
             min = Math.ceil(min);
@@ -32,12 +33,50 @@
         var heights = ["10", "1/6", "1/5", "1/3", "2/5", "1/2", "3/5", "2/3", "3/4", "4/5", "5/6", "full"]
         var colors = [6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 8, 8]
         
+        function Bar(props) {
+            return (
+                <div
+                className={`rellax flex flex-auto w-full z-0 bg-indigo-${props.c+"00"} ${(props.i==0 || props.i==1) ? 'mx-0' : '-mx-px'} rounded${props.loc ? "-" + props.loc : ""}-full`} 
+                style={{'height' : `${props.h}%`}}
+                data-rellax-speed={`${props.s}`}
+                data-rellax-xs-speed={`${props.s*1.3}`}
+                data-rellax-mobile-speed={`${props.s*1.3}`}
+                data-rellax-tablet-speed={`${props.s}`}
+                data-rellax-desktop-speed={`${props.s}`}
+                />
+            )
+        }
+
+        function Bars({minSpeed, maxSpeed, color, i}) {
+            var barsTop = []
+            var barsBot = []
+
+            let n = Math.floor(window.innerWidth/25)
+            
+            for (let i = 0; i <= n; i++) {
+                let rs = RandInt(minSpeed,maxSpeed)
+                let rh = 100 * (i / (n))+1
+                barsTop.push(<Bar h={rh} loc="b" s={rs} c={color} i={i/n}/>)
+                barsBot.push(<Bar h={rh} loc="t" s={-rs} c={color} i={i/n}/>)
+            }
+
+            barsBot.reverse()
+
+            return ([
+                <div class="flex flex-none absolute w-full h-full top-0 items-start z-0">
+                    {barsTop}
+                </div>,
+                <div class="flex flex-none absolute w-full h-full bot-0 items-end z-0 overflow-y-hidden">
+                    {barsBot}
+                </div>
+            ])
+        }
 
         function Landing() {
             const [scroll, setScroll] = React.useState(false)
-            
-            
 
+            // Cannot have Rellax creation in here with handleScroll
+            // Had to nest in Bars which makes rellax do weird stuff
             React.useEffect(() => {
                 new Rellax('.rellax', {
                     breakpoints: [640, 768, 1024]
@@ -46,59 +85,13 @@
                     if (window.scrollY != 0) {
                         setScroll(true);
                     } else setScroll(false);
-                    
+
                     console.log(scroll);
                 };
+                window.addEventListener('scroll', handleScroll);
+                return () => window.removeEventListener('scroll', handleScroll);
 
-                window.addEventListener("scroll", handleScroll, { passive: true });
-
-                return () => window.removeEventListener("scroll", handleScroll);
-                
-            }, [scroll])
-
-
-            function Bars({minSpeed, maxSpeed, color, i}) {
-                var barsTop = []
-                var barsBot = []
-
-                let n = Math.floor(window.innerWidth/25)
-                
-                function Bar(props) {
-                    
-                    return (
-                        
-                        <div 
-                        className={`flex flex-auto rellax w-full z-0 bg-indigo-${props.c+"00"} ${(props.i==0 || props.i==1) ? 'mx-0' : '-mx-px'} rounded${props.loc ? "-" + props.loc : ""}-full`} 
-                        style={{'height' : `${props.h}%`}}
-                        data-rellax-speed={`${props.s}`}
-                        data-rellax-xs-speed={`${props.s*1.3}`}
-                        data-rellax-mobile-speed={`${props.s*1.3}`}
-                        data-rellax-tablet-speed={`${props.s}`}
-                        data-rellax-desktop-speed={`${props.s}`}
-                        />
-                    )
-                }
-                
-                
-
-                for (let i = 0; i <= n; i++) {
-                    let rs = RandInt(minSpeed,maxSpeed)
-                    let rh = 100 * (i / (n))+1
-                    barsTop.push(<Bar h={rh} loc="b" s={rs} c={color} i={i/n}/>)
-                    barsBot.push(<Bar h={rh} loc="t" s={-rs} c={color} i={i/n}/>)
-                }
-
-                barsBot.reverse()
-
-                return ([
-                    <div class="flex flex-none absolute w-full h-full top-0 items-start z-0">
-                        {barsTop}
-                    </div>,
-                    <div class="flex flex-none absolute w-full h-full bot-0 items-end z-0 overflow-y-hidden">
-                        {barsBot}
-                    </div>
-                ])
-            }
+            }, [])
 
             return(
                 <section className="h-screen w-full">
