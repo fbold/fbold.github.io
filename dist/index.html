@@ -74,7 +74,7 @@
 
         function Landing() {
             const [scroll, setScroll] = React.useState(false)
-
+            
             // Cannot have Rellax creation in here with handleScroll
             // Had to nest in Bars which makes rellax do weird stuff
             React.useEffect(() => {
@@ -82,12 +82,14 @@
                     breakpoints: [640, 768, 1024]
                 })
                 
+                if (window.scrollY > 0) {
+                    setScroll(true);
+                }
+
                 const handleScroll = () => {
-                    console.log(window.scrollY)
                     if (window.scrollY > 0) {
                         setScroll(true);
                     } else setScroll(false);
-                    console.log(scroll)
                 }
 
                 window.addEventListener('scroll', handleScroll);
@@ -99,6 +101,7 @@
                 <section className="h-screen w-full">
                     <div className="h-full2">
                         <div className="flex sticky top-0 justify-center items-center h-screen w-auto text-center">
+                            {console.log(scroll)}
                             {scroll ? null : 
                             <svg className="animate-pulse relative h-14 w-full fill-current text-indigo-200 z-30" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
@@ -209,8 +212,8 @@
                             {dropsFront}{dropsBack}
                             <Title>About me</Title>
                             <TextElement c="true"> 
-                                I'm a young programmer and game developer looking to get into the industry and put my skills to use.
-                                I have a strong passions for code and like to play with new 
+                                I'm a young programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
+                                I have a strong passion for code and love learning new tools and frameworks.
                             </TextElement>
                             <Title>Projects</Title>
                             <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full h-screen">
