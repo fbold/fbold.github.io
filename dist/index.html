@@ -19,16 +19,6 @@
     <script type="text/javascript" src="../node_modules/rellax/rellax.min.js"></script>
 
     <script type="text/babel">
-        
-        function Bar(props) {
-            console.log("rendered bar")
-            return (
-                <div 
-                className={`flex rellax w-full z-0 bg-indigo-${props.c+"00"} rounded${props.loc ? "-" + props.loc : ""}-lg`} 
-                style={{'height' : `${props.h}%`}}
-                data-rellax-speed={`${props.s}`}/>
-            )
-        }
 
         function RandInt(min, max) {
             min = Math.ceil(min);
@@ -36,12 +26,7 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
         
-        var barsTop = []
-        var barsBot = []
-        var barsTopB = []
-        var barsBotB = []
-        var barsTopC = []
-        var barsBotC = []
+
         var heights = ["10", "1/6", "1/5", "1/3", "2/5", "1/2", "3/5", "2/3", "3/4", "4/5", "5/6", "full"]
         var colors = [6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 8, 8]
         
@@ -50,29 +35,55 @@
             const [mult, setMult] = React.useState(10)
 
             React.useEffect(() => {
-                new Rellax('.rellax')
+                new Rellax('.rellax', {
+                    breakpoints: [640, 768, 1024]
+                })
             }, [])
 
-            let n = Math.floor(window.innerWidth/7)
-            console.log(n)
+            function Bars({minSpeed, maxSpeed, color, i}) {
+                var barsTop = []
+                var barsBot = []
 
-            barsTop = []
-            barsBot = []
+                let n = Math.floor(window.innerWidth/25)
+                
+                function Bar(props) {
+                    console.log("rendered bar")
+                    
+                    return (
+                        
+                        <div 
+                        className={`flex flex-auto rellax w-full z-0 bg-indigo-${props.c+"00"} ${(props.i==0 || props.i==1) ? 'mx-0' : '-mx-px'} rounded${props.loc ? "-" + props.loc : ""}-full`} 
+                        style={{'height' : `${props.h}%`}}
+                        data-rellax-speed={`${props.s}`}
+                        data-rellax-xs-speed={`${props.s*1.3}`}
+                        data-rellax-mobile-speed={`${props.s*1.3}`}
+                        data-rellax-tablet-speed={`${props.s}`}
+                        data-rellax-desktop-speed={`${props.s}`}
+                        />
+                    )
+                }
+                
+                
 
-            for (let i = 1; i <= n; i++) {
-                let rs = RandInt(8,14)
-                let rh = 100 * (i / (n))+1
-                barsTop.push(<Bar h={rh} loc="b" s={rs} c={5}/>)
-                barsBot.push(<Bar h={rh} loc="t" s={-rs} c={5}/>)
-                barsTopB.push(<Bar h={rh} loc="b" s={rs-2} c={7}/>)
-                barsBotB.push(<Bar h={rh} loc="t" s={-(rs-2)} c={7}/>)
-                barsTopC.push(<Bar h={rh} loc="b" s={rs-4} c={9}/>)
-                barsBotC.push(<Bar h={rh} loc="t" s={-(rs-4)} c={9}/>)
+                for (let i = 0; i <= n; i++) {
+                    let rs = RandInt(minSpeed,maxSpeed)
+                    let rh = 100 * (i / (n))+1
+                    barsTop.push(<Bar h={rh} loc="b" s={rs} c={color} i={i/n}/>)
+                    barsBot.push(<Bar h={rh} loc="t" s={-rs} c={color} i={i/n}/>)
+                }
 
+                barsBot.reverse()
+
+                return ([
+                    <div class="flex flex-none absolute w-full h-full top-0 items-start z-0">
+                        {barsTop}
+                    </div>,
+                    <div class="flex flex-none absolute w-full h-full bot-0 items-end z-0 overflow-y-hidden">
+                        {barsBot}
+                    </div>
+                ])
             }
-            barsBot.reverse()
-            barsBotB.reverse()
-            barsBotC.reverse()
+
             return(
                 <section className="h-screen w-full">
                     <div className="h-full2">
@@ -92,26 +103,9 @@
                                         </svg>
                                     </div>
                             </header>
-                            
-                            <div class="flex absolute w-full h-full pb-0 top-0 items-start z-0">
-                                {barsTopC}
-                            </div>
-                            <div class="flex absolute w-full h-full pb-0 top-0 items-start z-0">
-                                {barsTopB}
-                            </div>
-                            <div class="flex absolute w-full h-full pb-0 top-0 items-start z-0">
-                                {barsTop}
-                            </div>
-
-                            <div class="flex absolute w-full h-full pt-0 bottom-0 items-end z-0 overflow-y-hidden">
-                                {barsBotC}
-                            </div>
-                            <div class="flex absolute w-full h-full pt-0 bottom-0 items-end z-0 overflow-y-hidden">
-                                {barsBotB}
-                            </div>
-                            <div class="flex absolute w-full h-full pt-0 bottom-0 items-end z-0 overflow-y-hidden">
-                                {barsBot}
-                            </div>
+                            <Bars minSpeed={6} maxSpeed={8} color={6} extraHeight={10}/>
+                            <Bars minSpeed={9} maxSpeed={12} color={5} extraHeight={5}/>
+                            <Bars minSpeed={13} maxSpeed={16} color={4} />
 
                         </div>
                     </div>
@@ -145,11 +139,11 @@
             )
         }
 
-        function GridElement({title, imgUrl, children}) {
+        function GridElement({title, imgUrl, span=1, children}) {
             console.log("rendered grid element")
             const [expand, setExpand] = React.useState(false)
             return (
-                <div className="relative h-300 w-full py-5 px-5 font-bold" data-rellax-speed="2">
+                <div className={`col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold`} data-rellax-speed="2">
                     <div className="rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-gray-900 shadow-xl  border-indigo-400 border-t-6 md:border-t-0 md:border-l-8 md:hover:border-l-20 hover:bg-gray-700 duration-200">
                         
                         <TextElement title={title}>{children}</TextElement>
@@ -162,7 +156,7 @@
             console.log("rendered bar")
             return (
                 <div 
-                className={`flex opacity-${o} absolute rellax-rain w-2 z-${props.z} bg-indigo-${(props.c-1)*100} mx-px md:mx-0.2 rounded-lg`} 
+                className={`flex opacity-${o} absolute rellax-rain w-4 z-${props.z} bg-indigo-${(props.c-1)*100} mx-px md:mx-0.2 rounded-lg`} 
                 style={{'height' : `${props.h}rem`, 'top': `${props.t}%`, 'left': `${props.l}%`}}
                 data-rellax-speed={`${props.s}`}/>
             )
@@ -177,24 +171,24 @@
                 new Rellax('.rellax-rain')
             }, [])
 
-            let n = Math.floor(window.innerWidth/30)
+            let n = Math.floor(window.innerWidth/50)
             
             for (let i = 1; i <= n; i++) {
                 let rh = RandInt(1,7)
-                let rs = RandInt(2,12)
+                let rs = RandInt(1,7)
                 let rc = RandInt(0,heights.colors-1)
-                let rt = Math.round(Math.random() * 100)
-                let rl = Math.round(Math.random() * 99)
-                dropsFront.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="20" o="20"/>)
+                let rt = Math.round(Math.random() * 100) + 50
+                let rl = Math.round(Math.random() * 97)
+                dropsFront.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="20" o="10"/>)
                 
             }
             for (let i = 1; i <= n; i++) {
                 let rh = RandInt(1,7)
-                let rs = RandInt(2,12)
+                let rs = RandInt(1,7)
                 let rc = RandInt(0,heights.colors-1)
                 let rt = Math.round(Math.random() * 100) + 50
                 let rl = Math.round(Math.random() * 99)
-                dropsBack.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="0" o="60"/>)
+                dropsBack.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="0" o="40"/>)
             }
 
             return (
@@ -207,10 +201,8 @@
                             <TextElement c="true"> I'm a young game and web developer looking to get into the industry and put my skills to use. Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br/>Possimus dolor et dolores rem minima illum assumenda odio dolorum cum? Totam facilis nobis ratione porro veniam<br/> accusantium eum, repudiandae recusandae minus.</TextElement>
                             <Title>Projects</Title>
                             <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-8 md:px-20 w-full h-screen">
-                                <GridElement title="LMGTFY Firefox Add-on" imgUrl="../img/stove.png"> 
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
-                                    enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
-                                    sint atque rerum modi.    
+                                <GridElement title="Dog Nights" imgUrl="../img/stove.png" span={3}> 
+                                    A solo project made in the Unity3D engine
                                 </GridElement>
                                 <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
