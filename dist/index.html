@@ -47,7 +47,7 @@
             )
         }
 
-        function Bars({minSpeed, maxSpeed, color, i}) {
+        function Bars({minSpeed, maxSpeed, color, extraHeight=0, zIndex=20}) {
             var barsTop = []
             var barsBot = []
 
@@ -55,7 +55,7 @@
             
             for (let i = 0; i <= n; i++) {
                 let rs = RandInt(minSpeed,maxSpeed)
-                let rh = 100 * (i / (n))+1
+                let rh = 100 * (i / (n))+extraHeight
                 barsTop.push(<Bar h={rh} loc="b" s={rs} c={color} i={i/n}/>)
                 barsBot.push(<Bar h={rh} loc="t" s={-rs} c={color} i={i/n}/>)
             }
@@ -63,10 +63,10 @@
             barsBot.reverse()
 
             return ([
-                <div class="flex flex-none absolute w-full h-full top-0 items-start z-0">
+                <div class={"flex flex-none absolute w-full h-full top-0 items-start z-"+zIndex}>
                     {barsTop}
                 </div>,
-                <div class="flex flex-none absolute w-full h-full bot-0 items-end z-0 overflow-y-hidden">
+                <div class={"flex flex-none absolute w-full h-full bot-0 items-end overflow-y-hidden z-"+zIndex}>
                     {barsBot}
                 </div>
             ])
@@ -102,7 +102,7 @@
                                 <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
                             </svg>}
                             
-                            <header className="absolute w-auto z-0">
+                            <header className="absolute w-auto z-10">
                                     <div className="relative text-center object-center content-center items-center p-4">
                                         <span className="text-lg font-bold text-indigo-200">Hi, I'm Fred</span>
                                         <h1 className="text-indigo-400 text-3xl font-sans font-extrabold">welcome to my portfolio</h1>
@@ -112,9 +112,11 @@
                                         </svg>
                                     </div>
                             </header>
-                            <Bars minSpeed={6} maxSpeed={8} color={6} extraHeight={10}/>
-                            <Bars minSpeed={9} maxSpeed={12} color={5} extraHeight={5}/>
-                            <Bars minSpeed={13} maxSpeed={16} color={4} />
+                            
+                            <Bars minSpeed={6} maxSpeed={8} color={7} zIndex={0}/>
+                            <Bars minSpeed={9} maxSpeed={12} color={6}/>
+                            <Bars minSpeed={13} maxSpeed={16} color={5}/>
+                            <Bars minSpeed={18} maxSpeed={22} color={4} extraHeight={2}/>
 
                         </div>
                     </div>
@@ -140,14 +142,14 @@
             return(
                 <div className={`px-6 py-3 ${props.c ? 'text-center' : ''}`}>
                     {props.title ? <div className="font-bold text-xl text-indigo-400 mb-2 z-20">{props.title}</div> : null}
-                    <p className="relative text-gray-300 font-bold text-base z-20 overflow-hidden">
+                    <p className="relative text-gray-300 font-normal text-xl z-20 overflow-hidden">
                         {props.children}
                     </p>
                 </div>
             )
         }
 
-        function GridElement({title, imgUrl, span=1, children}) {
+        function GridElement({title, span=1, children}) {
             const [expand, setExpand] = React.useState(false)
             return (
                 <div className={`flex items-center col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold`} data-rellax-speed="2">
@@ -206,38 +208,38 @@
                             <Title>About me</Title>
                             <TextElement c="true"> 
                                 I'm a young programmer and game developer looking to get into the industry and put my skills to use.
-                                I have always loved programming and 
+                                I have a strong passions for code and like to play with new 
                             </TextElement>
                             <Title>Projects</Title>
-                            <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-8 md:px-20 w-full h-screen">
-                                <GridElement title="Dog Nights" imgUrl="../img/stove.png" span={3}> 
+                            <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full h-screen">
+                                <GridElement title="Dog Nights" span={2}> 
                                     Dog Nights is my abitious first person survival game I am currently developing in the Unity game engine.
                                     It is a story about the death of your dog, Paddy ... and Paddy's body's subsequent overtaking by a magicals crystal
                                     that lands on your front lawn, you must battle off hordes of night creatures that try to desroy the crystal, 
                                     and by extension, the only thing that remains of your beloved Paddy.
                                     <div className="flex items-center overflow-hidden max-h-96 mt-5"><img src="../img/stove.png" alt="" className="w-full h-auto "/></div>
                                 </GridElement>
-                                <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
                                 </GridElement>
-                                <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
                                 </GridElement>
-                                <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
                                 </GridElement>
-                                <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
                                 </GridElement>
-                                <GridElement title="Dog Nights Game" imgUrl="../img/genbot.png"> 
+                                <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
@@ -285,6 +287,7 @@
 
         function App() {
             const [sidebar, setSidebar] = React.useState(false)
+
             return(
                 [
                     <div class="absolute w-full no-scrollbar">
