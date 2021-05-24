@@ -145,20 +145,24 @@
 
         function TextElement(props) {
             return(
-                <div className={`px-6 py-3 ${props.c ? 'text-center' : ''}`}>
+                <div className={`relative px-6 py-3 ${props.c ? 'text-center' : ''}`}>
                     {props.title ? <div className="font-bold text-xl text-indigo-400 mb-2 z-20">{props.title}</div> : null}
-                    <p className="relative text-gray-300 font-normal text-xl z-20 overflow-hidden">
+                    <p className="text-gray-300 font-normal text-xl z-20 overflow-hidden">
                         {props.children}
                     </p>
                 </div>
             )
         }
 
-        function GridElement({title, span=1, children}) {
-            const [expand, setExpand] = React.useState(false)
+        function GridElement({title, span=1, state, setState, children}) {
+            function handleClick() {
+                setState(!state)
+            }
+            
             return (
-                <div className={`flex items-center col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold`} data-rellax-speed="2">
-                    <div className="flex items-start rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-gray-900 shadow-xl  border-indigo-400 border-t-6 hover:border-t-20 hover:bg-gray-700 duration-200">
+                <div className={`flex items-center col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold z-10`} data-rellax-speed="2">
+                    <div className="flex cursor-pointer items-start rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-indigo-even-darker2 shadow-xl  border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
+                    onClick={handleClick}>
                         
                         <TextElement title={title}>{children}</TextElement>
                     </div>
@@ -166,63 +170,72 @@
             )
         }
 
-        function Drop({o="100", ...props}) {
+        function Drop(props) {
+            
             return (
                 <div 
-                className={`flex opacity-${o} absolute rellax-rain w-4 z-${props.z} bg-indigo-${(props.c-1)*100} mx-px md:mx-0.2 rounded-lg`} 
+                key={Math.round(Math.random()*1000  )}
+                className={`flex opacity-${props.o} absolute rellax-drops w-6 z-${props.z} bg-indigo-${(props.c)*100} mx-px md:mx-0.2 rounded-full`} 
                 style={{'height' : `${props.h}rem`, 'top': `${props.t}%`, 'left': `${props.l}%`}}
                 data-rellax-speed={`${props.s}`}/>
             )
         }
 
-        var dropsFront = []
-        var dropsBack = []
+        function Drops({o, nDrops, ...props}) {
+            const [drops, setDrops] = React.useState([])
+            //var drops = []
+            let n = Math.floor(nDrops * window.innerWidth/700)
+
+
+            React.useEffect(() => {
+                console.log("running useEffect")
+                new Rellax('.rellax-drops')
+                
+            }, [drops])
+            
+            React.useEffect(() => {
+                for (let i = 1; i <= n; i++) {
+                    let rh = RandInt(1,7)
+                    let rs = RandInt(1,7)
+                    let rc = RandInt(6,9)
+                    let rt = Math.round(Math.random() * 100) + 200
+                    let rl = Math.random() * 97
+                    setDrops(arr => [...arr, <Drop h={rh} s={rs} c={rc} t={rt} l={rl} z="0" o={o}/>])
+                    //drops.push(<Drop h={rh} s={rs} c={rc} t={rt} l={rl} z="0" o={o}/>)
+                }
+            }, [])
+
+            return(drops)
+        }
 
 
         function Contents() {
-            React.useEffect(() => {
-                new Rellax('.rellax-rain')
-            }, [])
+            const [expand, setExpand] = React.useState(false)
 
-            let n = Math.floor(window.innerWidth/50)
-            
-            for (let i = 1; i <= n; i++) {
-                let rh = RandInt(1,7)
-                let rs = RandInt(1,7)
-                let rc = RandInt(0,heights.colors-1)
-                let rt = Math.round(Math.random() * 100) + 50
-                let rl = Math.round(Math.random() * 97)
-                dropsFront.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="20" o="10"/>)
-                
-            }
-            for (let i = 1; i <= n; i++) {
-                let rh = RandInt(1,7)
-                let rs = RandInt(1,7)
-                let rc = RandInt(0,heights.colors-1)
-                let rt = Math.round(Math.random() * 100) + 50
-                let rl = Math.round(Math.random() * 99)
-                dropsBack.push(<Drop h={rh} s={rs} c={colors[rs]} t={rt} l={rl} z="0" o="40"/>)
-            }
 
             return (
                 <section className="h-screen">
                     <div className="h-full2 relative items-end justify-items-end ">
                         <div className="relative flow flex-row items-end top-0 h-1/2 w-full flex-wrap"></div>
                         <div className="relative flow flex-row items-end bg-purple-even-darker bottom-0 w-full">
-                            {dropsFront}{dropsBack}
+                            
                             <Title>About me</Title>
-                            <TextElement c="true"> 
-                                I'm a young programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
-                                I have a strong passion for code and love learning new tools and frameworks.
-                            </TextElement>
+                            <div className="relative w-2/3 m-auto">
+                                <TextElement c="true"> 
+                                    I'm a young programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
+                                    I've been obsessed with programming for as long as I can remember, I've always been eager to bring my ideas to life in a tangible way,
+                                    and programming gave me that freedom. From early java game programming, to messing about with arduino, to starting my journey in web development
+                                    and now becoming a Unity obsessed maniac and avid React learner. 
+                                </TextElement>
+                            </div>
                             <Title>Projects</Title>
                             <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full h-screen">
-                                <GridElement title="Dog Nights" span={2}> 
+                                <GridElement title="Dog Nights" span={2} state={expand} setState={setExpand}> 
                                     Dog Nights is my abitious first person survival game I am currently developing in the Unity game engine.
                                     It is a story about the death of your dog, Paddy ... and Paddy's body's subsequent overtaking by a magicals crystal
                                     that lands on your front lawn, you must battle off hordes of night creatures that try to desroy the crystal, 
                                     and by extension, the only thing that remains of your beloved Paddy.
-                                    <div className="flex items-center overflow-hidden max-h-96 mt-5"><img src="../img/stove.png" alt="" className="w-full h-auto "/></div>
+                                    <div className="flex items-center overflow-hidden max-h-96 mt-5"><img src="../img/stove.png" alt="" className="w-full h-auto " state={expand} setState={setExpand}/></div>
                                 </GridElement>
                                 <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
@@ -249,8 +262,9 @@
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
                                 </GridElement>
+                                <Drops o="10" nDrops={30}/>
                             </div>
-                        
+                            
                         </div>
                     </div>
                 </section>
@@ -298,7 +312,6 @@
                     <div class="absolute w-full no-scrollbar">
                         <Landing/>
                         <Contents/>
-                        
                     </div>
                 ]
             )

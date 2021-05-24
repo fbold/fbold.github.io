@@ -23,6 +23,12 @@ module.exports = {
           'dark': '#26004c',
           'darker': '#190033',
           'even-darker': '#0c0019'
+        },
+        'indigo': {
+          'dark': '#373c63',
+          'darker': '#292d4a',
+          'even-darker': '#1b1e31',
+          'even-darker2': '#0d0f18'
         }
       },
       height: {
