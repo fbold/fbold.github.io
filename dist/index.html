@@ -11,7 +11,7 @@
 
 <body class="bg-purple-even-darker no-scrollbar">
 
-    <div id="root"></div>
+    <div id="root" class="no-scrollbar"></div>
 
     <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
@@ -21,17 +21,12 @@
     <script type="text/babel">
 
         var root = document.getElementById('root')
-    
 
         function RandInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        
-
-        var heights = ["10", "1/6", "1/5", "1/3", "2/5", "1/2", "3/5", "2/3", "3/4", "4/5", "5/6", "full"]
-        var colors = [6, 6, 6, 7, 7, 7, 8, 8, 8, 8, 8, 8]
         
         function Bar(props) {
             return (
@@ -118,10 +113,17 @@
                                     </div>
                             </header>
                             
+                            <Bars minSpeed={4} maxSpeed={6} color={7} zIndex={0}/>
+                            <Bars minSpeed={7} maxSpeed={9} color={6}/>
+                            <Bars minSpeed={10} maxSpeed={12} color={5}/>
+                            <Bars minSpeed={13} maxSpeed={15} color={4} extraHeight={2}/>
+
+                            {/**
                             <Bars minSpeed={6} maxSpeed={8} color={7} zIndex={0}/>
                             <Bars minSpeed={9} maxSpeed={12} color={6}/>
                             <Bars minSpeed={13} maxSpeed={16} color={5}/>
                             <Bars minSpeed={18} maxSpeed={22} color={4} extraHeight={2}/>
+                            **/}
 
                         </div>
                     </div>
@@ -155,7 +157,6 @@
         }
 
         function Drop(props) {
-            
             return (
                 <div 
                 key={Math.round(Math.random()*1000  )}
@@ -195,33 +196,36 @@
             return(drops)
         }
 
-        function GridElement({title, span=1, state, setState, children}) {
-            function handleClick() {
-                setState(!state)
-            }
+        function GridElement({onClick, span=1, ...props}) {
+            const extendedInfo = props.extendedInfo
             
             return (
                 
-                <div className={`flex items-center col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold z-10`} data-rellax-speed="2">
-                    <div className="flex cursor-pointer items-start rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-indigo-even-darker2 shadow-xl  border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
-                    onClick={handleClick}>
-                        
-                        <TextElement title={title}>{children}</TextElement>
+                <div 
+                className={`flex items-center col-span-1 md:col-span-${span-1} xl:col-span-${span} relative h-300 w-full py-5 px-5 font-bold z-10`}
+                data-rellax-speed="2">
+                    <div 
+                    className="flex cursor-pointer items-start rounded w-full h-full overflow-hidden my-5 mx-2 md:mx-5 bg-indigo-even-darker2 shadow-xl  border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
+                    onClick={onClick}>
+                        <TextElement title={props.title}>{props.children}</TextElement>
                     </div>
                 </div>
             
             )
         }
 
-        function Contents() {
-            const [expand, setExpand] = React.useState(false)
-
+        function Contents(props) {
+            
+            
+            function handleClick(e) {
+                props.setInfoPanel(!props.infoPanel)
+                console.log(props.infoPanel)
+            }
 
             return (
-                
                 <section className="h-screen">
-                    
                     <div className="h-full2 relative items-end justify-items-end ">
+                        
                         <div className="relative flow flex-row items-end top-0 h-1/2 w-full flex-wrap"></div>
                         
                         <div className="relative flow flex-row items-end bg-purple-even-darker bottom-0 w-full">
@@ -236,15 +240,15 @@
                                 </TextElement>
                             </div>
                             <Title>Projects</Title>
-                            <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full h-screen">
-                                <GridElement title="Dog Nights" span={2} state={expand} setState={setExpand}> 
+                            <div class="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto">
+                                <GridElement title="Dog Nights" span={2} onClick={handleClick}> 
                                     Dog Nights is my abitious first person survival game I am currently developing in the Unity game engine.
                                     It is a story about the death of your dog, Paddy ... and Paddy's body's subsequent overtaking by a magicals crystal
                                     that lands on your front lawn, you must battle off hordes of night creatures that try to desroy the crystal, 
                                     and by extension, the only thing that remains of your beloved Paddy.
-                                    <div className="flex items-center overflow-hidden max-h-96 mt-5"><img src="../img/stove.png" alt="" className="w-full h-auto " state={expand} setState={setExpand}/></div>
+                                    <div className="flex items-center overflow-hidden max-h-96 mt-5"><img src="../img/stove.png" alt="" className="w-full h-auto "/></div>
                                 </GridElement>
-                                <GridElement title="Dog Nights Game" state={expand} setState={setExpand}> 
+                                <GridElement title="Dog Nights Game"> 
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi, 
                                     enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae 
                                     sint atque rerum modi.    
@@ -271,57 +275,72 @@
                                 </GridElement>
                                 <Drops o="10" nDrops={30}/>
                             </div>
-                            
                         </div>
                     </div>
                 </section>
             )
         }
 
-        // function Sidebar (sidebar) {
-            
-        //     return(
-        //         <div key="asdad"
-        //             className={"sidebar bg-gray-700 text-blue-100 w-64 space-y-6 py-7 absolute inset-y-0 left-0 transform" + (sidebar ? " " : " -translate-x-full ") + "md:relative md:translate-x-0 transition duration-200 ease-in-out"}>
-        //             {console.log(sidebar ? "hidden" : "-translate-x-full")}
-        //             {/* LOGO */}
-        //             <a href="#" className="text-white flex items-center space-x-2 px-4">
-        //                 <svg className="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-        //                         d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-        //                 </svg>
-        //                 <span className="text-2xl font-extrabold">Better Dev</span>
-        //             </a>
+        const OverlayPanel = props => {
 
-        //             <nav>
-        //                 <a href="" className="block py-2.5 px-4 transition duration-200 hover:bg-green-500 hover:text-black">
-        //                     Resume
-        //                 </a>
-        //                 <a href="" className="block py-2.5 px-4 transition duration-200 hover:bg-green-500 hover:text-black">
-        //                     About
-        //                 </a>
-        //                 <a href="" className="block py-2.5 px-4 transition duration-200 hover:bg-green-500 hover:text-black">
-        //                     Features
-        //                 </a>
-        //                 <a href="" className="block py-2.5 px-4 transition duration-200 hover:bg-green-500 hover:text-black">
-        //                     Pricing
-        //                 </a>
-        //             </nav>
-        //         </div>
-        //     )
-        // }
+            const handleClick = () => {
+                props.setInfoPanel(!props.infoPanel)
+            }
+            
+
+            return (
+                props.infoPanel ? 
+                    <container className="flex justify-center items-center" >    
+                        <div className="fixed mt-auto top-0 h-full w-full bg-indigo-even-darker2 opacity-70 z-40" onClick={handleClick}/>
+                        <div className="fixed m-auto top-1/4 w-2/3 bg-indigo-even-darker z-40 o-100"/>
+                    </container>
+                    : null
+                    
+
+            )
+            
+        }
+
+        const TestHide = props => {
+            const handleClick = () => {
+                props.setInfoPanel(!props.infoPanel)
+            }
+            
+
+            return (
+                props.infoPanel ? 
+                    [<div className="absolute transform transition -translate-x-full ease-in-out duration-700 z-50 bg-purple-even-darker">    
+                        {props.children}
+                    </div>,
+                    <div className="flex absolute w-full justify-center items-center">
+                        <div className="flex fixed justify-center items-center mt-auto top-0 h-full w-full bg-purple-even-darker opacity-70 z-40" onClick={handleClick}>
+                            <div className="fixed m-auto h-2/3 w-2/3 bg-pink-500 z-40 o-100"/>    
+                        </div>
+                    </div>]
+                    :
+                    [<div className="absolute transform transition translate-x ease-in-out duration-700 z-50 bg-purple-even-darker">    
+                        {props.children}
+                    </div>,<div className="flex absolute w-full justify-center items-center z-0">
+                        <div className="flex fixed justify-center items-center mt-auto top-0 h-full w-full bg-purple-even-darker opacity-70 z-0" onClick={handleClick}>
+                            <div className="fixed m-auto h-2/3 w-2/3 bg-pink-500 z-40 o-100"/>    
+                        </div>
+                    </div>
+                    ]
+                    
+
+            )
+        }
 
         function App() {
-            const [sidebar, setSidebar] = React.useState(false)
+            const [infoPanel, setInfoPanel] = React.useState(false)
 
             return(
-                [
-                
-                    <div class="absolute w-full no-scrollbar">
+                <React.Fragment>
+                    <TestHide infoPanel={infoPanel} setInfoPanel={setInfoPanel}>
                         <Landing/>
-                        <Contents/>
-                    </div>
-                ]
+                        <Contents infoPanel={infoPanel} setInfoPanel={setInfoPanel}/>
+                    </TestHide>
+                </React.Fragment>
             )
         }
 
