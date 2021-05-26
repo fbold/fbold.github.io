@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import Rellax from '../node_modules/rellax/rellax.min.js'
 import gamePic from './img/creature2.png'
+import text from './text.js'
 
 function RandInt(min, max) {
     min = Math.ceil(min);
@@ -225,19 +226,13 @@ function Contents(props) {
                     <Title>About me</Title>
                     <div className="relative w-2/3 m-auto">
                         <TextElement c="true">
-                            I'm a young programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
-                            I've been obsessed with programming for as long as I can remember, I've always been eager to bring my ideas to life in a tangible way,
-                            and programming gave me that freedom. From early java game programming, to messing about with arduino, to starting my journey in web development
-                            and now becoming a Unity obsessed maniac and avid React learner.
+                            {text.about.short}
                         </TextElement>
                     </div>
                     <Title>Projects</Title>
                     <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto">
                         <GridElement title="Dog Nights" span={2} onClick={() => { handleClick() }} image={gamePic}>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis omnis amet provident reiciendis
-                            accusamus nobis. Eum minus doloribus quo, distinctio, saepe, sit harum fuga cumque optio possimus
-                            id voluptate iusto.
-                            
+                            {text.game.short}                            
                         </GridElement>
                         <GridElement title="Dog Nights Game">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
