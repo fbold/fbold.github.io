@@ -29,7 +29,7 @@ function Bars({ minSpeed, maxSpeed, color, extraHeight = 0, zIndex = 20 }) {
     let n = Math.floor(window.innerWidth / 25)
 
     for (let i = 0; i <= n; i++) {
-        let rs = RandInt(minSpeed, maxSpeed)
+        let rs = RandInt(minSpeed, maxSpeed) + Math.random()*1
         let rh = 100 * (i / (n)) + extraHeight
         barsTop.push(<Bar key={i} h={rh} loc="b" s={rs} c={color} i={i / n} />)
         barsBot.push(<Bar key={i} h={rh} loc="t" s={-rs} c={color} i={i / n} />)
@@ -75,9 +75,9 @@ function Landing() {
 
     return (
         <section className="h-screen w-full">
-            <div className="h-full2">
+            
+            <div className="h-full3  bg-purple-even-darker z-0">
                 <div className="flex sticky top-0 justify-center items-center h-screen w-auto text-center">
-                    {console.log(scroll)}
                     {scroll ? null :
                         <svg className="animate-pulse relative h-14 w-full fill-current text-indigo-200 z-30" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
@@ -94,10 +94,10 @@ function Landing() {
                         </div>
                     </header>
 
-                    <Bars minSpeed={4} maxSpeed={6} color={7} zIndex={0} />
-                    <Bars minSpeed={7} maxSpeed={9} color={6} />
-                    <Bars minSpeed={10} maxSpeed={12} color={5} />
-                    <Bars minSpeed={13} maxSpeed={15} color={4} extraHeight={2} />
+                    <Bars minSpeed={2} maxSpeed={3} color={7} zIndex={0} />
+                    <Bars minSpeed={4} maxSpeed={6} color={6} />
+                    <Bars minSpeed={7} maxSpeed={9} color={5} />
+                    <Bars minSpeed={10} maxSpeed={12} color={4} extraHeight={2} />
 
                     {/**
                             <Bars minSpeed={6} maxSpeed={8} color={7} zIndex={0}/>

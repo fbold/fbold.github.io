@@ -39,6 +39,7 @@ module.exports = {
         'full1.5': '150%',
         'full2': '200%',
         'full2.5': '250%',
+        'full3': '300%',
       },
       width: {
         'full1.1': '110%',
