@@ -27,7 +27,6 @@ function Drops({ o, nDrops, ...props }) {
     React.useEffect(() => {
         // TODO: add event listener for scroll so it only applies rellax class
         // when past the first scroll amopunt
-        console.log("running useEffect")
         new Rellax('.rellax-drops')
 
     }, [drops])

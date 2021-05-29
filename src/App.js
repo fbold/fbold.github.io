@@ -41,15 +41,13 @@ function GridElement({ onClick, span = 1, ...props }) {
                 </div>
     } else image = null
     
-    console.log(image)
-    
     return (
 
         <div
-            className={`flex items-center col-span-1 md:col-span-${span - 1} xl:col-span-${span} relative h-300 w-full lg:px-5 my-1 md:my-5 font-bold z-10`}
+            className={`flex items-center col-span-1 md:col-span-${span - 1} xl:col-span-${span} relative my-2 h-300 w-full font-bold z-10`}
             data-rellax-speed="2">
             <div
-                className="flex flex-col cursor-pointer items-start rounded w-full h-full overflow-hidden my-1 lg:my-3 mx-2 md:mx-5 bg-indigo-even-darker2 shadow-xl  border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
+                className="flex flex-col cursor-pointer items-start rounded w-full h-full overflow-hidden mx-2 py-1 bg-indigo-even-darker2 shadow-xl border-6 border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
                 onClick={onClick}>
                 <TextElement title={props.title}>{props.children}</TextElement>
                 {image}
@@ -63,9 +61,9 @@ function GridElement({ onClick, span = 1, ...props }) {
 function Contents(props) {
 
 
-    function handleClick(test) {
+    function handleClick(object) {
         props.setInfoPanel(!props.infoPanel)
-        
+        props.setExtendedInfoObject(object)
     }
 
     return (
@@ -84,26 +82,26 @@ function Contents(props) {
                     </div>
                     <Title>Projects</Title>
                     <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto">
-                        <GridElement title="Dog Nights" span={2} onClick={() => { handleClick() }} image={gamePic}>
+                        <GridElement title={text.game.title} span={2} image={gamePic} onClick={() => { handleClick(text.game) }} >
                             {text.game.short}
                         </GridElement>
-                        <GridElement title="Dog Nights Game" image={lmgtfy1}>
+                        <GridElement title="LMGTFY Firefox Addon" image={lmgtfy1} onClick={() => { handleClick(text.lmgtfy) }}>
                             {text.lmgtfy.short}
                         </GridElement>
-                        <GridElement title="Dog Nights Game">
+                        <GridElement title={text.game.title} onClick={() => { handleClick(text.sigmo)}}>
                             {text.sigmo.short}
                         </GridElement>
-                        <GridElement title="Dog Nights Game">
+                        <GridElement title={text.game.title}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
                             enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae
                             sint atque rerum modi.
                         </GridElement>
-                        <GridElement title="Dog Nights Game">
+                        <GridElement title={text.game.title}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
                             enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae
                             sint atque rerum modi.
                                 </GridElement>
-                        <GridElement title="Dog Nights Game">
+                        <GridElement title={text.game.title}>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
                             enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae
                             sint atque rerum modi.
@@ -139,7 +137,7 @@ const MoreInfo = props => {
                     <div
                         className="flex relative flex-col items-start w-full h-full md:w-2/3 md:h-4/5 overflow-hidden my-5 mx-auto bg-indigo-even-darker shadow-xl  border-indigo-400 md:rounded border-l-6 border-r-6 duration-200"
                         >
-                        <TextElement>{props.children}</TextElement>
+                        <TextElement>{props.extendedInfoObject.long}</TextElement>
                     </div>
                 </div>
             </div>
@@ -166,8 +164,8 @@ const TestHide = props => {
                 <div className="absolute transform transition -translate-x-full ease-in-out duration-700 z-50 bg-purple-even-darker">
                     {props.children}
                 </div>
-                <MoreInfo handleClick={handleClick}>
-                    {text.lmgtfy.long}
+                <MoreInfo extendedInfoObject={props.extendedInfoObject} handleClick={handleClick}>
+                    
                 </MoreInfo>
             </>
             :
@@ -175,8 +173,8 @@ const TestHide = props => {
                 <div className="absolute transform transition translate-x ease-in-out duration-700 z-50 bg-purple-even-darker">
                     {props.children}
                 </div>
-                <MoreInfo handleClick={handleClick}>
-                    {text.lmgtfy.long}
+                <MoreInfo extendedInfoObject={props.extendedInfoObject} handleClick={handleClick}>
+                    
                 </MoreInfo>
             </>
     )
@@ -185,12 +183,13 @@ const TestHide = props => {
 
 function App() {
     const [infoPanel, setInfoPanel] = React.useState(false)
+    const [currentExtendedInfoObject, setCurrentExtendedInfoObject] = React.useState("")
 
     return (
         <React.Fragment>
-            <TestHide infoPanel={infoPanel} setInfoPanel={setInfoPanel}>
+            <TestHide infoPanel={infoPanel} setInfoPanel={setInfoPanel} extendedInfoObject={currentExtendedInfoObject}>
                 <Landing />
-                <Contents infoPanel={infoPanel} setInfoPanel={setInfoPanel} />
+                <Contents infoPanel={infoPanel} setInfoPanel={setInfoPanel} setExtendedInfoObject={setCurrentExtendedInfoObject}/>
             </TestHide>
         </React.Fragment>
     )
