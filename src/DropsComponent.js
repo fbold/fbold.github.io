@@ -11,17 +11,16 @@ function RandInt(min, max) {
 function Drop(props) {
     return (
         <div
-            
             className={`flex opacity-${props.o} absolute rellax-drops w-6 z-${props.z} bg-indigo-${(props.c) * 100} mx-px md:mx-0.2 rounded-full`}
             style={{ 'height': `${props.h}rem`, 'top': `${props.t}%`, 'left': `${props.l}%` }}
             data-rellax-speed={`${props.s}`} />
     )
 }
 
-function Drops({ o, nDrops, ...props }) {
+function Drops(props) {
     const [drops, setDrops] = React.useState([])
     //var drops = []
-    let n = Math.floor(nDrops * window.innerWidth / 700)
+    let n = Math.floor(props.nDrops * window.innerWidth / 700)
 
 
     React.useEffect(() => {
@@ -39,10 +38,10 @@ function Drops({ o, nDrops, ...props }) {
             let rc = RandInt(6, 9)
             let rt = Math.round(Math.random() * 100)
             let rl = Math.random() * 97
-            setDrops(arr => [...arr, <Drop key={i} h={rh} s={rs} c={rc} t={rt} l={rl} z="0" o={o} />])
+            setDrops(arr => [...arr, <Drop key={i} h={rh} s={rs} c={rc} t={rt} l={rl} z="0" o={props.o} />])
             //drops.push(<Drop h={rh} s={rs} c={rc} t={rt} l={rl} z="0" o={o}/>)
         }
-    }, [n, o])
+    }, [])
 
     return (drops)
 }

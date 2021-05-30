@@ -1,6 +1,4 @@
 import React from 'react';
-import gamePic from './img/creature2.png'
-import lmgtfy1 from './img/lmgtfy1.png'
 import text from './text.js'
 
 import Landing from './LandingComponent.js'
@@ -8,14 +6,11 @@ import Drops from './DropsComponent.js'
 
 
 
-function Title({ text = '', children }) {
+function Title({children}) {
     return (
         <div className="relative flow flex-wrap h-20 w-full content-center items-center text-center font-bold">
             <div className="w-full px-6 py-4">
-                <div className="font-bold text-3xl text-indigo-400">{children}</div>
-                <p className="text-gray-300 text-base">
-                    {text}
-                </p>
+                <div className=" font-bold text-3xl text-indigo-400 ">{children}</div>
                 <hr className="m-auto self-center w-1/2 border-1 mt-1" />
             </div>
         </div>
@@ -23,9 +18,12 @@ function Title({ text = '', children }) {
 }
 
 function TextElement(props) {
+
+    
+
     return (
         <div className={`relative px-3 lg:px-6 py-3 ${props.c ? 'text-center' : ''}`}>
-            {props.title ? <div className="font-bold text-xl text-indigo-400 mb-2 z-20">{props.title}</div> : null}
+            {props.title ? <div className="font-bold text-2xl text-indigo-400 mb-2 z-20">{props.title}</div> : null}
             <p className="text-gray-200 font-normal text-lg md:text-xl z-20 overflow-hidden">
                 {props.children}
             </p>
@@ -33,7 +31,7 @@ function TextElement(props) {
     )
 }
 
-function GridElement({ onClick, span = 1, ...props }) {
+function GridElement(props) {
     let image = null
     if (props.image != null) {
         image = <div className="flex items-center relative px-1 lg:px-6 lg:py-3 w-full max-h-80 overflow-hidden">
@@ -41,14 +39,16 @@ function GridElement({ onClick, span = 1, ...props }) {
                 </div>
     } else image = null
     
+    console.log(image)
+
     return (
 
         <div
-            className={`flex items-center col-span-1 md:col-span-${span - 1} xl:col-span-${span} relative my-2 h-300 w-full font-bold z-10`}
+            className={`flex items-center col-span-1 md:col-span-${props.span - 1} xl:col-span-${props.span} relative my-2 h-300 w-full font-bold z-10`}
             data-rellax-speed="2">
             <div
                 className="flex flex-col cursor-pointer items-start rounded w-full h-full overflow-hidden mx-2 py-1 bg-indigo-even-darker2 shadow-xl border-6 border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
-                onClick={onClick}>
+                onClick={props.onClick}>
                 <TextElement title={props.title}>{props.children}</TextElement>
                 {image}
                 
@@ -66,6 +66,17 @@ function Contents(props) {
         props.setExtendedInfoObject(object)
     }
 
+    const arrayOfObjects = Object.values(text.projects)
+    
+    const arrayOfComponents = arrayOfObjects.map(object => (
+            <GridElement key={object.title} title={object.title} 
+            image={object.images ? object.images[0] : null} span={object.span ? object.span : 1} 
+            onClick={() => { handleClick(object) }} >
+                {object.short}
+            </GridElement>
+    ))
+    console.log(arrayOfComponents)
+
     return (
         <section className="h-screen bg-purple-even-darker select-none">
             <div className="h-full2 relative items-end justify-items-end select-none">
@@ -80,42 +91,47 @@ function Contents(props) {
                             {text.about.short}
                         </TextElement>
                     </div>
+
                     <Title>Projects</Title>
                     <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto">
-                        <GridElement title={text.game.title} span={2} image={gamePic} onClick={() => { handleClick(text.game) }} >
-                            {text.game.short}
-                        </GridElement>
-                        <GridElement title="LMGTFY Firefox Addon" image={lmgtfy1} onClick={() => { handleClick(text.lmgtfy) }}>
-                            {text.lmgtfy.short}
-                        </GridElement>
-                        <GridElement title={text.game.title} onClick={() => { handleClick(text.sigmo)}}>
-                            {text.sigmo.short}
-                        </GridElement>
-                        <GridElement title={text.game.title}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
-                            enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae
-                            sint atque rerum modi.
-                        </GridElement>
-                        <GridElement title={text.game.title}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
-                            enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae
-                            sint atque rerum modi.
-                                </GridElement>
-                        <GridElement title={text.game.title}>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eum veritatis neque nisi,
-                            enim illum fugit fuga corrupti minima labore dolores reiciendis aliquid, laudantium quam beatae
-                            sint atque rerum modi.
-                        </GridElement>
-                        
+                        {arrayOfComponents}
                     </div>
-                    <Drops o="10" nDrops={30} />
+
+                    <Title>Contact</Title>
+                    <div className="relative w-full m-auto lg:w-2/3">
+                        <TextElement c="true">
+                            {text.about.short}
+                        </TextElement>
+                    </div>
+
+                    <hr className="mx-auto self-center w-full border-1 mt-7"/>
+                    <Footer/>
+                
                 </div>
             </div>
         </section>
     )
 }
 
+const Footer = props => {
+    return (
+        
+        <footer className="absolute w-full m-auto z-10 bg-purple-even-darker">
+            <div className="relative text-center object-center content-center items-center m-auto my-10">
+                <span className="text-sm font-normal text-indigo-200">Made with ❤️ by Fred</span>
+            </div>
+        </footer>
+    )
+}
+
 const MoreInfo = props => {
+
+    let image = null
+    if (props.extendedInfoObject.images != null) {
+        image = <div className="flex items-center relative my-2 px-1 lg:px-6 lg:py-3 w-full max-h-100 overflow-hidden">
+                    <img src={props.extendedInfoObject.images[1]} alt="" className="block w-full h-auto"/>
+                </div>
+    } else image = null
 
     return (
         <div className="flex absolute w-full justify-center items-center no-scrollbar">
@@ -135,9 +151,9 @@ const MoreInfo = props => {
                 className={`flex items-center relative h-full w-full font-bold z-10 `}
                 data-rellax-speed="2">
                     <div
-                        className="flex relative flex-col items-start w-full h-full md:w-2/3 md:h-4/5 overflow-hidden my-5 mx-auto bg-indigo-even-darker shadow-xl  border-indigo-400 md:rounded border-l-6 border-r-6 duration-200"
-                        >
+                        className="flex relative flex-col items-start w-full h-full md:w-2/3 md:h-4/5 overflow-hidden my-5 mx-auto bg-indigo-even-darker shadow-xl  border-indigo-400 md:rounded border-l-6 border-r-6 duration-200">
                         <TextElement>{props.extendedInfoObject.long}</TextElement>
+                        {image}
                     </div>
                 </div>
             </div>
