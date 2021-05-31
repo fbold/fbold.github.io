@@ -148,7 +148,7 @@ const MoreInfo = props => {
                 className={`flex items-center relative h-full w-full font-bold z-10 `}
                 data-rellax-speed="2">
                     <div
-                        className="flex relative flex-col items-start w-full h-full md:w-2/3 md:h-4/5 overflow-hidden my-5 mx-auto bg-indigo-even-darker shadow-xl  border-indigo-400 md:rounded border-l-6 border-r-6 duration-200">
+                        className="flex relative flex-col items-start w-full h-full md:w-2/3 md:h-4/5 overflow-scroll no-scrollbar my-5 mx-auto bg-indigo-even-darker shadow-xl  border-indigo-400 md:rounded border-l-6 border-r-6 duration-200">
                         <TextElement>{props.extendedInfoObject.long}</TextElement>
                         <Collage object={props.extendedInfoObject}/>
                     </div>

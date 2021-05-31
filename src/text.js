@@ -37,10 +37,13 @@ const projects = {
         blender: {
             title: "3D Modelling",
             short: `I have learnt the basics of 3D modelling in blender to assist in my indie game development projects. Some of my better models include a version of the sirenhead creature (created by Trevor Henderson), another original creature with a similar style, and an old stove prop.`,
-            long: `This was a simple proof of concept to see how easy it would be to make a browser add-on, turns out the process itself is very straightforward,
+            long: `This was a simple project to familiarize myself with the browser addon development workflow, the process itself is very straightforward,
+            essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenationThis was a simple project to familiarize myself with the browser addon development workflow, the process itself is very straightforward,
+            essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenationThis was a simple project to familiarize myself with the browser addon development workflow, the process itself is very straightforward,
+            essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenationThis was a simple proof of concept to see how easy it would be to make a browser add-on, turns out the process itself is very straightforward,
                     essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenation for the URL
                     was all that was required, plus a few methods to obtain the information from the selected text and saving urls to the clipboard`,
-            images: [blender3, blender2],
+            images: [blender3, blender2, blender1],
         },
         sigmo: {
             title: "Unity Orbital Mechanics Simulator",
