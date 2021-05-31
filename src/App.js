@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import text from './text.js'
 
 import Landing from './LandingComponent.js'
 import Drops from './DropsComponent.js'
 import Collage from './CollageComponent.js'
+import reactDom from 'react-dom';
 
 
 function Title({children}) {
@@ -68,7 +69,7 @@ function Contents(props) {
     
     const arrayOfComponents = arrayOfObjects.map(object => (
             <GridElement key={object.title} title={object.title} 
-            image={object.images ? object.images[0] : null} span={object.span ? object.span : 1} 
+            image={object.images ? object.images.cover : null} span={object.span ? object.span : 1} 
             onClick={() => { handleClick(object) }} >
                 {object.short}
             </GridElement>
@@ -97,7 +98,8 @@ function Contents(props) {
                     <Title>Contact</Title>
                     <div className="relative w-full m-auto lg:w-2/3">
                         <TextElement c="true">
-                            {text.about.short}
+                            You can reach me at any of the following places:
+                            
                         </TextElement>
                     </div>
 
@@ -169,6 +171,7 @@ const TestHide = props => {
     const handleClick = () => {
         props.setInfoPanel(!props.infoPanel)
     }
+    
 
 
     return (
@@ -197,6 +200,11 @@ const TestHide = props => {
 function App() {
     const [infoPanel, setInfoPanel] = React.useState(false)
     const [currentExtendedInfoObject, setCurrentExtendedInfoObject] = React.useState("")
+
+    React.useEffect(() => {
+        if(infoPanel) document.body.style.overflow = "hidden";
+        else document.body.style.overflow = "";
+    }, [infoPanel])
 
     return (
         <React.Fragment>

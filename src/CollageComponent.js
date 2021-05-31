@@ -12,11 +12,19 @@ const settings = {
 
 const Collage = props => {
     console.log(props.object)
-    var images = []
+    var imagesh = []
+    var imagesv = []
+    
     if (props.object) {
-        for (let i = 0; i < props.object.images.length; i++) {
-            images.push(
-                <img src={props.object.images[i]} alt="" className="block w-full h-auto border-3 border-indigo-200 top-0"/>
+        for (let i = 0; i < props.object.images.horizontal.length; i++) {
+                imagesh.push(
+                    <img src={props.object.images.horizontal[i]} alt="" className="block w-full h-auto border-3 border-indigo-200 top-0"/>
+                )
+        }
+
+        for (let i = 0; i < props.object.images.vertical.length; i++) {
+            imagesv.push(
+                <img src={props.object.images.vertical[i]} alt="" className="block w-full h-auto border-3 border-indigo-200 top-0"/>
             )
         }
     }
@@ -25,13 +33,14 @@ const Collage = props => {
     console.log(settings)
 
     return (
-        <div className="flex">
-            <div className="flex flex-col items-start relative my-2 px-1 lg:px-6 lg:py-3 w-full h-auto">
-                {images}
+        <div className="flex relative w-full m-auto flex-col md:flex-row h-auto pb-2 px-2 gap-2">
+            <div className="block relative m-auto flex-col items-start gap-2">
+                {imagesh}
             </div>
-            <div className="flex flex-col items-start relative my-2 px-1 lg:px-6 lg:py-3 w-full h-auto">
-                {images}
-            </div>
+            {imagesv.length?<div className="flex relative flex-col items-start ">
+                {imagesv}
+            </div> : null}
+            
         </div>
     );
 }

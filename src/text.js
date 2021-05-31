@@ -5,6 +5,7 @@ import sigmo2 from './img/sigmo-preview2-portfolio.gif'
 import blender1 from './img/creature2.png'
 import blender2 from './img/sirenhead.png'
 import blender3 from './img/creature-animated.gif'
+import blender4 from './img/stove.png'
 
 const projects = {
     about: {
@@ -20,7 +21,11 @@ const projects = {
             short: `Dug In (working title) is a first person video game I am developing in the Unity game engine that will be my first commercial release. You play as an isolated man mourning the recent death of his dog, however a strange turn of events leaves you fighting off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog.`,
             long: `naklsdjaskd jaks jdkaj sdklajsdaklsdja lskdjalsk djalksdjalksjd laksjd lkas jdlkaj sdlkjasldk jaklsdjalkjsdlkajsdlkajsldkjalksdjklajsdlkasd
             aksjdklajsdlkajsdlkjalskdjlaksjdlkasjdlkjasldkjalskdjlaksj dlkaaaklsjdklajskldo gua[oieuf klajshflkHJ SLOADIKFHJ LASKDF OLIWSD ;JK;DASD]`,
-            images: [],
+            images: {
+                cover: [],
+                horizontal: [],
+                vertical: [],
+            },
         },
         lmgtfy: {
             title: "LMGTFY Firefox Addon",
@@ -32,7 +37,11 @@ const projects = {
                     was all that was required, plus a few methods to obtain the information from the selected text and saving urls to the clipboard. `,<br/>,<br/>,`
                     The result was a silly addon that allow you to copy text on any page and copy that as a URL to letmegooglethat.com that will show you how to google that text,
                     you can alternatively use the addon icon in the toolbar to open a little menu to copy your own question URL as well as toggle "copied to clipboard" notifications.`],
-            images: [lmgtfy1, lmgtfy2],
+            images: {
+                cover: [lmgtfy1],
+                horizontal: [lmgtfy2],
+                vertical: [],
+            },
         },
         blender: {
             title: "3D Modelling",
@@ -43,13 +52,21 @@ const projects = {
             essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenationThis was a simple proof of concept to see how easy it would be to make a browser add-on, turns out the process itself is very straightforward,
                     essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenation for the URL
                     was all that was required, plus a few methods to obtain the information from the selected text and saving urls to the clipboard`,
-            images: [blender3, blender2, blender1],
+            images: {
+                cover: [blender3],
+                horizontal: [blender1, blender4],
+                vertical: [blender2],
+            },
         },
         sigmo: {
             title: "Unity Orbital Mechanics Simulator",
             short: "An application that makes use of Unity's physics engine to simulate gravitational interactions between objects in two possible modes. One where you can observe the effects on the orbit of a spacecraft depending on its direction of propulsion.",
             long: "",
-            images: [sigmo1, sigmo2],
+            images: {
+                cover: [sigmo1],
+                horizontal: [sigmo1],
+                vertical: [sigmo2],
+            },
         },
     
     }
