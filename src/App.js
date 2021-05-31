@@ -3,7 +3,7 @@ import text from './text.js'
 
 import Landing from './LandingComponent.js'
 import Drops from './DropsComponent.js'
-
+import Collage from './CollageComponent.js'
 
 
 function Title({children}) {
@@ -38,8 +38,6 @@ function GridElement(props) {
                     <img src={props.image} alt="" className="block w-full h-auto"/>
                 </div>
     } else image = null
-    
-    console.log(image)
 
     return (
 
@@ -75,7 +73,6 @@ function Contents(props) {
                 {object.short}
             </GridElement>
     ))
-    console.log(arrayOfComponents)
 
     return (
         <section className="h-screen bg-purple-even-darker select-none">
@@ -153,7 +150,7 @@ const MoreInfo = props => {
                     <div
                         className="flex relative flex-col items-start w-full h-full md:w-2/3 md:h-4/5 overflow-hidden my-5 mx-auto bg-indigo-even-darker shadow-xl  border-indigo-400 md:rounded border-l-6 border-r-6 duration-200">
                         <TextElement>{props.extendedInfoObject.long}</TextElement>
-                        {image}
+                        <Collage object={props.extendedInfoObject}/>
                     </div>
                 </div>
             </div>
