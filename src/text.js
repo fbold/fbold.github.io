@@ -60,8 +60,8 @@ const projects = {
         },
         sigmo: {
             title: "Unity Orbital Mechanics Simulator",
-            short: "An application that makes use of Unity's physics engine to simulate gravitational interactions between objects in two possible modes. One where you can observe the effects on the orbit of a spacecraft depending on its direction of propulsion.",
-            long: "",
+            short: "An application that makes use of Unity's physics engine to simulate gravitational interactions between objects in two possible modes.",
+            long: "This simulator was part of a research project to create a tool to visualize applies the laws of classical mechanics to 3D objects using Unity's physics engine. It was part of a research project to explain that allows you to observe the effects on the orbit of a spacecraft depending on its direction of propulsion.",
             images: {
                 cover: [sigmo1],
                 horizontal: [sigmo1],
