@@ -1,5 +1,5 @@
 {
-  "homepage": ".",
+  "homepage": "https://vurak.github.io/",
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
@@ -15,6 +15,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "deploy": "git subtree push --prefix build origin gh-pages",
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
@@ -40,6 +41,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.6",
+    "gh-pages": "^3.2.0",
     "postcss": "^7.0.35",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   }
