@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "./static/css/main.d4ade625.chunk.css",
+    "main.js": "./static/js/main.95bd7adf.chunk.js",
+    "main.js.map": "./static/js/main.95bd7adf.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.418cdfdd.js",
+    "runtime-main.js.map": "./static/js/runtime-main.418cdfdd.js.map",
+    "static/js/2.8d3df345.chunk.js": "./static/js/2.8d3df345.chunk.js",
+    "static/js/2.8d3df345.chunk.js.map": "./static/js/2.8d3df345.chunk.js.map",
+    "index.html": "./index.html",
+    "static/css/main.d4ade625.chunk.css.map": "./static/css/main.d4ade625.chunk.css.map",
+    "static/js/2.8d3df345.chunk.js.LICENSE.txt": "./static/js/2.8d3df345.chunk.js.LICENSE.txt",
+    "static/media/creature-animated.68838c17.gif": "./static/media/creature-animated.68838c17.gif",
+    "static/media/creature2.e8514a78.png": "./static/media/creature2.e8514a78.png",
+    "static/media/lmgtfy-page.a7706f2c.png": "./static/media/lmgtfy-page.a7706f2c.png",
+    "static/media/sigmo-preview-portfolio.36a619d3.gif": "./static/media/sigmo-preview-portfolio.36a619d3.gif",
+    "static/media/sigmo-preview2-portfolio.365b9005.gif": "./static/media/sigmo-preview2-portfolio.365b9005.gif",
+    "static/media/sirenhead.09fd9bd4.png": "./static/media/sirenhead.09fd9bd4.png",
+    "static/media/stove.b731a376.png": "./static/media/stove.b731a376.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.418cdfdd.js",
+    "static/js/2.8d3df345.chunk.js",
+    "static/css/main.d4ade625.chunk.css",
+    "static/js/main.95bd7adf.chunk.js"
+  ]
+}

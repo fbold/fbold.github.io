@@ -68,6 +68,17 @@ const projects = {
                 vertical: [sigmo2],
             },
         },
+        portfolio: {
+            span: 2,
+            title: "This Page!",
+            short: "A React app styled with tailwind CSS made from scratch.",
+            long: "",
+            images: {
+                cover: [],
+                horizontal: [sigmo1],
+                vertical: [sigmo2],
+            },
+        },
     
     }
 }
