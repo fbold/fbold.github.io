@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import text from './text.js'
 
+
+import SocialBar from './SocialBar.js'
 import Landing from './LandingComponent.js'
 import Drops from './DropsComponent.js'
 import Collage from './CollageComponent.js'
@@ -57,6 +59,10 @@ function GridElement(props) {
     )
 }
 
+
+
+
+
 function Contents(props) {
 
 
@@ -99,8 +105,8 @@ function Contents(props) {
                     <div className="relative w-full m-auto lg:w-2/3">
                         <TextElement c="true">
                             You can reach me at any of the following places:
-                            
                         </TextElement>
+                        <SocialBar/>
                     </div>
 
                     <hr className="mx-auto self-center w-full border-1 mt-7"/>
