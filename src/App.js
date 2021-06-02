@@ -11,10 +11,10 @@ import reactDom from 'react-dom';
 
 function Title({children}) {
     return (
-        <div className="relative flow flex-wrap h-20 w-full content-center items-center text-center font-bold">
-            <div className="w-full px-6 py-4">
+        <div className="relative flow flex-wrap h-auto w-full content-center items-center text-center font-bold">
+            <div className="w-full px-6 py-2">
                 <div className=" font-bold text-3xl text-indigo-400 ">{children}</div>
-                <hr className="m-auto self-center w-1/2 border-1 mt-1" />
+                <hr className="m-auto self-center w-1/2 border-2 rounded-full mt-1" />
             </div>
         </div>
     )
@@ -63,14 +63,14 @@ function GridElement(props) {
 const ProgressBar = props => {
     return(
         <>
-        <div className="w-2/3 m-auto">
-            <p className="font-mono text-lg text-indigo-200">{props.title}</p>
-        </div>
-        <div className="h-4 w-2/3 border-dashed border-2 m-auto align-middle" >
-            <div className={`bg-indigo-300`} style={{width:props.p*10+"%", height:"17px", marginTop:"-2px", marginLeft:"-2px"}} >
-            
+            <div className="w-4/5 md:w-2/3 m-auto">
+                <p className="font-mono text-lg text-indigo-200">{props.title}</p>
             </div>
-        </div>
+            <div className="h-4 w-4/5 md:w-2/3 border-dashed border-2 m-auto align-middle" >
+                <div className={`bg-indigo-300`} style={{width:props.p*10+"%", height:"17px", marginTop:"-2px", marginLeft:"-2px"}} >
+                
+                </div>
+            </div>
         </>
     )
 }
@@ -95,10 +95,10 @@ function Contents(props) {
     ))
 
     return (
-        <section className="h-screen bg-purple-even-darker select-none">
-            <div className="h-full2 relative items-end justify-items-end select-none">
+        <section className="h-screen bg-purple-even-darker">
+            <div className="h-full2 relative items-end justify-items-end">
 
-                <div className="relative flow flex-row items-end top-0 h-full w-full flex-wrap z-0 select-none"></div>
+                <div className="relative flow flex-row items-end top-0 h-full w-full flex-wrap z-0"></div>
 
                 <div className="relative flow flex-row items-end bg-purple-even-darker bottom-0 w-full">
 
@@ -134,7 +134,7 @@ function Contents(props) {
                         <SocialBar/>
                     </div>
 
-                    <hr className="mx-auto self-center w-full border-1 mt-7"/>
+                    <hr className="mx-auto self-center w-full border-2 mt-7"/>
                     <Footer/>
                 
                 </div>
