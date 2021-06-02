@@ -85,7 +85,7 @@ function Landing() {
 
                     <header className="absolute w-auto z-10">
                         <div className="relative text-center object-center content-center items-center p-4">
-                            <span className="text-2xl font-normal text-indigo-200">Hi, I'm <b>Fred</b></span>
+                            <span className="text-2xl font-normal text-indigo-200">Hi, I'm <p className="text-4xl font-bold text-indigo-200">Fred Old</p></span>
                             <h1 className="text-indigo-400 text-4xl font-sans font-extrabold">welcome to my portfolio</h1>
                             <div className="relative mt-3"><span className="text-sm font-bold text-indigo-200 animate-pulse">(keep scrolling)</span></div>
                             <svg className="animate-pulse relative h-5 w-full fill-current text-indigo-200" viewBox="0 0 16 16">
