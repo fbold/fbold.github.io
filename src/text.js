@@ -14,6 +14,7 @@ import portfolio1 from './img/bg-image.png'
 import portfolio2 from './img/react-gif.gif'
 
 import game1 from './img/game1.jpg'
+import game2 from './img/landscape.gif'
 
 const projects = {
     about: {
@@ -23,7 +24,7 @@ const projects = {
     },
     projects: {
         game: {
-            span: 2,
+            span: 3,
             title: "Dug In",
             short: `Dug In (working title) is a first person video game I am developing in the Unity game engine that will be my first commercial release. `,
             long:  `This is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
@@ -32,7 +33,7 @@ const projects = {
                     off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog.`,
             images: {
                 cover: [game1],
-                horizontal: [],
+                horizontal: [game2],
                 vertical: [],
             },
         },
@@ -41,7 +42,7 @@ const projects = {
             short: <>A firefox add-on that allows you to immediately obtain a link to a 
                     <a className="underline" href="https://letmegooglethat.com/" target="_blank" rel="noreferrer"> LMGTFY </a>
                      question to send in reply to anyone asking a rudely googleable question.</>,
-            long: <>This was a simple project to familiarize myself with the browser addon development workflow, the process itself is very straightforward,
+            long: <>This was a simple project to familiarize myself with the browser addon development workflow,
                     essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenation for the URL
                     was all that was required, plus a few methods to obtain the information from the selected text and saving urls to the clipboard. <br/><br/>
                     The result was a silly addon that allow you to copy text on any page and copy that as a URL to letmegooglethat.com that will show you how to google that text,
@@ -54,6 +55,7 @@ const projects = {
             },
         },
         blender: {
+            span: 2,
             title: "3D Modelling",
             short: `Take a look at some of my blender models I have made!`,
             long: `As part of my game development journey, I have had to learn 3D modelling to allow myself to have more control over the style and consistency in style of the game, as well as making the development process more economical (albeit also more time consuming!)
@@ -65,6 +67,7 @@ const projects = {
             },
         },
         sigmo: {
+            span: 2,
             title: "Unity Orbital Mechanics Simulator",
             short: "An application that makes use of Unity's physics engine to simulate gravitational interactions between objects in two possible modes.",
             long: "This application was part of One where you can observe the effects on the orbit of a spacecraft depending on its direction of propulsion.",

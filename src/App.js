@@ -43,7 +43,7 @@ function GridElement(props) {
     return (
 
         <div
-            className={`flex items-center col-span-1 md:col-span-${props.span} xl:col-span-${props.span}  relative my-2 h-300 w-full font-bold z-10`}
+            className={`flex items-start col-span-1 md:col-span-${props.span} xl:col-span-${props.span}  relative my-2 h-300 w-full font-bold z-10`}
             data-rellax-speed="2">
             <div
                 className="flex flex-col cursor-pointer items-start rounded w-full h-auto overflow-hidden bg-indigo-even-darker2 shadow-xl border-6 border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
@@ -113,7 +113,7 @@ function Contents(props) {
                     </div>
 
                     <Title>Projects</Title>
-                    <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto md:gap-4 ">
+                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto md:gap-4 ">
                         {arrayOfComponents}
                     </div>
 
