@@ -3,7 +3,7 @@ import lmgtfy3 from './img/lmgtfy-page.png'
 import lmgtfy2 from './img/lmgtfy2.png'
 
 import sigmo1 from './img/sigmo-preview-portfolio.gif'
-import sigmo2 from './img/sigmo-preview2-portfolio.gif'
+import sigmo2 from './img/sigmo-preview3.gif'
 
 import blender1 from './img/creature2.png'
 import blender2 from './img/sirenhead.png'
@@ -18,9 +18,7 @@ import game2 from './img/landscape.gif'
 
 const projects = {
     about: {
-        short: `I'm a young and passionate programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
-        I've been in love with programming for as long as I can remember; from early java game programming, to messing about with arduino, to starting my journey in web development
-        and now working on my first full solo indie title, there's nothing I want more than to start collaborating and contributing to a prohject bigger than just myself.`,
+        short: `I'm a young and passionate programmer/game developer looking to get into the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in web development and now working on my first full solo indie title. There's nothing I want more than to start collaborating and contributing to a project bigger than myself.`,
     },
     projects: {
         game: {
@@ -70,11 +68,11 @@ const projects = {
             span: 2,
             title: "Unity Orbital Mechanics Simulator",
             short: "An application that makes use of Unity's physics engine to simulate gravitational interactions between objects in two possible modes.",
-            long: "This application was part of One where you can observe the effects on the orbit of a spacecraft depending on its direction of propulsion.",
+            long: "This application models the effects of gravity on the orbit of a spacecraft depending on its direction of propulsion and visualises the n body problem. This involved bringing orbital mechanics equations into code in order to accurately simulate a large number of gravitational interactions for one part of the program, as well as allowing for real-time visualization of the orbit of a craft during an orbital manoeuvre.",
             images: {
                 cover: [sigmo1],
-                horizontal: [sigmo1],
-                vertical: [sigmo2],
+                horizontal: [sigmo1, sigmo2],
+                vertical: [],
             },
         },
         portfolio: {
