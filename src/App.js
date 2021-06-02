@@ -1,12 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import text from './text.js'
 
 
 import SocialBar from './SocialBar.js'
 import Landing from './LandingComponent.js'
-import Drops from './DropsComponent.js'
 import Collage from './CollageComponent.js'
-import reactDom from 'react-dom';
 
 
 function Title({children}) {
@@ -45,10 +43,10 @@ function GridElement(props) {
     return (
 
         <div
-            className={`flex items-center col-span-1 md:col-span-${props.span - 1} xl:col-span-${props.span}  relative my-2 h-300 w-full font-bold z-10`}
+            className={`flex items-center col-span-1 md:col-span-${props.span} xl:col-span-${props.span}  relative my-2 h-300 w-full font-bold z-10`}
             data-rellax-speed="2">
             <div
-                className="flex flex-col cursor-pointer items-start rounded w-full h-auto overflow-hidden mx-2 bg-indigo-even-darker2 shadow-xl border-6 border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
+                className="flex flex-col cursor-pointer items-start rounded w-full h-auto overflow-hidden bg-indigo-even-darker2 shadow-xl border-6 border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
                 onClick={props.onClick}>
                 <TextElement title={props.title}>{props.children}</TextElement>
                 {image}
@@ -66,9 +64,14 @@ const ProgressBar = props => {
             <div className="w-4/5 md:w-2/3 m-auto">
                 <p className="font-mono text-lg text-indigo-200">{props.title}</p>
             </div>
-            <div className="h-4 w-4/5 md:w-2/3 border-dashed border-2 m-auto align-middle" >
-                <div className={`bg-indigo-300`} style={{width:props.p*10+"%", height:"17px", marginTop:"-2px", marginLeft:"-2px"}} >
-                
+            <div className=" h-4 w-4/5 md:w-2/3 m-auto items-center" >
+                <div className="flex align-middle w-full m-auto items-center">
+                    <div className={`bg-indigo-300 h-4 z-30`} style={{width:props.p*10+"%"}} >
+                    
+                    </div>
+                    <div className={`h-4 border-dashed border-2 border-l-0`} style={{width:100-props.p*10+"%"}} >
+                        
+                    </div>
                 </div>
             </div>
         </>
@@ -110,27 +113,29 @@ function Contents(props) {
                     </div>
 
                     <Title>Projects</Title>
-                    <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2  xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto md:gap-4 ">
                         {arrayOfComponents}
                     </div>
 
                     <Title>Skills</Title>
                     <div className="relative w-full m-auto lg:w-2/3">
-                        <p className="font-mono text-lg text-indigo-200">
+                        
                             <ProgressBar p={6} title="JavaScript"/><br/>
-                            <ProgressBar p={8} title="Unity (C#)"/><br/>
-                            <ProgressBar p={6} title="React"/><br/>
-                            <ProgressBar p={5} title="Git"/><br/>
+                            <ProgressBar p={9} title="Unity (C#)"/><br/>
+                            <ProgressBar p={8} title="HTML/CSS"/><br/>
+                            <ProgressBar p={7} title="React"/><br/>
+                            <ProgressBar p={6} title="Git"/><br/>
                             <ProgressBar p={7} title="Blender"/><br/>
                             <ProgressBar p={8} title="Python"/><br/>
-                        </p>
+                            
+                        
                     </div>
 
                     <Title>Contact</Title>
                     <div className="relative w-full m-auto lg:w-2/3">
-                        <TextElement c="true">
+                        {/* <TextElement c="true">
                             You can reach me at any of the following places:
-                        </TextElement>
+                        </TextElement> */}
                         <SocialBar/>
                     </div>
 
@@ -148,7 +153,7 @@ const Footer = props => {
         
         <footer className="absolute w-full m-auto z-10 bg-purple-even-darker">
             <div className="relative text-center object-center content-center items-center m-auto my-10">
-                <span className="text-sm font-normal text-indigo-200">Made with ❤️ by Fred Old – Code available on <a className="underline" target="_blank" href="https://github.com/Vurak/vurak.github.io/tree/react-dev-branch">GitHub</a></span>
+                <span className="text-sm font-normal text-indigo-200">Made with ❤️ by Fred Old – Code available on <a className="underline" target="_blank" rel="noreferrer" href="https://github.com/Vurak/vurak.github.io/tree/react-dev-branch">GitHub</a></span>
             </div>
         </footer>
     )
@@ -156,12 +161,7 @@ const Footer = props => {
 
 const MoreInfo = props => {
 
-    let image = null
-    if (props.extendedInfoObject.images != null) {
-        image = <div className="flex items-center relative my-2 px-1 lg:px-6 lg:py-3 w-full max-h-100 overflow-hidden">
-                    <img src={props.extendedInfoObject.images[1]} alt="" className="block w-full h-auto"/>
-                </div>
-    } else image = null
+
 
     return (
         <div className="flex absolute w-full justify-center items-center no-scrollbar">

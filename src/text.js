@@ -17,17 +17,16 @@ import game1 from './img/game1.jpg'
 
 const projects = {
     about: {
-        short: `I'm a young programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
-        I've been obsessed with programming for as long as I can remember, I've always been eager to bring my ideas to life in a tangible way,
-        and programming gave me that freedom. From early java game programming, to messing about with arduino, to starting my journey in web development
-        and now working on my first full solo indie title.`,
+        short: `I'm a young and passionate programmer and game developer looking to get into the industry and put my skills to use in a professional environment.
+        I've been in love with programming for as long as I can remember; from early java game programming, to messing about with arduino, to starting my journey in web development
+        and now working on my first full solo indie title, there's nothing I want more than to start collaborating and contributing to a prohject bigger than just myself.`,
     },
     projects: {
         game: {
             span: 2,
             title: "Dug In",
             short: `Dug In (working title) is a first person video game I am developing in the Unity game engine that will be my first commercial release. `,
-            long:  `Unity is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
+            long:  `This is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
                     that includes gameplay programming, AI and pathfinding using unity's navmesh system, asset creation (modelling, texturing, basic animating), shader development with ShaderGraph, 
                     among other development tasks that a solo indie dev has to do. You play as an isolated man mourning the recent death of his dog, however a strange turn of events leaves you fighting 
                     off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog.`,
@@ -40,14 +39,14 @@ const projects = {
         lmgtfy: {
             title: "LMGTFY Firefox Addon",
             short: <>A firefox add-on that allows you to immediately obtain a link to a 
-                    <a className="underline" href="https://letmegooglethat.com/" target="_blank" rel="noopener"> LMGTFY </a>
+                    <a className="underline" href="https://letmegooglethat.com/" target="_blank" rel="noreferrer"> LMGTFY </a>
                      question to send in reply to anyone asking a rudely googleable question.</>,
             long: <>This was a simple project to familiarize myself with the browser addon development workflow, the process itself is very straightforward,
                     essentially only as difficult as the functionality you want to give it. In my case, some simple string manipulation and concatenation for the URL
                     was all that was required, plus a few methods to obtain the information from the selected text and saving urls to the clipboard. <br/><br/>
                     The result was a silly addon that allow you to copy text on any page and copy that as a URL to letmegooglethat.com that will show you how to google that text,
                     you can alternatively use the addon icon in the toolbar to open a little menu to copy your own question URL as well as toggle "copied to clipboard" notifications.<br/><br/>
-                    Code available on <a className="underline" href="https://github.com/Vurak/lmgtfy-add-on" target="_blank" rel="noopener"> GitHub</a>.</>,
+                    Code available on <a className="underline" href="https://github.com/Vurak/lmgtfy-add-on" target="_blank" rel="noreferrer"> GitHub</a>.</>,
             images: {
                 cover: [lmgtfy1],
                 horizontal: [lmgtfy2],

@@ -79,7 +79,7 @@ function Landing() {
             <div className="h-full3  bg-purple-even-darker z-0">
                 <div className="flex sticky top-0 justify-center items-center h-screen w-auto text-center">
                     {scroll ? null :
-                        <svg className="animate-pulse relative h-14 w-full fill-current text-indigo-200 z-30" viewBox="0 0 16 16">
+                        <svg className="animate-pulse relative h-24 w-full fill-current text-indigo-200 z-30" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z" />
                         </svg>}
 

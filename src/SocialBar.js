@@ -5,23 +5,17 @@ const icons = {
     mail: <svg className="w-full h-full fill-current text-indigo-400 hover:text-indigo-300 duration-300" viewBox="0 0 24 24"><path fillRule="evenodd" d="M12 .02c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.99 6.98l-6.99 5.666-6.991-5.666h13.981zm.01 10h-14v-8.505l7 5.673 7-5.672v8.504z" ></path></svg>,
 }
 
-
-const handleClick = () => {
-
-}
-
-
 const SocialBar = () => {
     return(
         <div className="grid grid-flow-col w-min items-center m-auto gap-10 mt-2">
-            <div className="relative m-auto w-16 h-16 cursor-pointer" onClick={() => {window.open('https://github.com/Vurak', '_blank')}}>
-                {icons.github}
-            </div>
-            <div className="relative m-auto w-16 h-16 cursor-pointer" onClick={() => {window.open('https://www.linkedin.com/in/frederick-old-7a3098171', '_blank')}}>
-                {icons.linkedin}
+            <div className="relative m-auto w-16 h-16 cursor-pointer">
+                <a href="https://github.com/Vurak" target="_blank"  rel="noreferrer">{icons.github}</a>
             </div>
             <div className="relative m-auto w-16 h-16 cursor-pointer">
-                <a classNAme="mailto" href="mailto:contact@test.com" target="_blank">{icons.mail}</a>
+                <a href="https://www.linkedin.com/in/frederick-old-7a3098171" target="_blank"  rel="noreferrer">{icons.linkedin}</a>
+            </div>
+            <div className="relative m-auto w-16 h-16 cursor-pointer">
+                <a className="mailto" href="mailto:frederick.bruce.old@gmail.com" target="_blank"  rel="noreferrer">{icons.mail}</a>
             </div>
 
         </div>
