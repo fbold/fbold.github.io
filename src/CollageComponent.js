@@ -18,13 +18,13 @@ const Collage = props => {
     if (props.object) {
         for (let i = 0; i < props.object.images.horizontal.length; i++) {
                 imagesh.push(
-                    <img src={props.object.images.horizontal[i]} alt="" className="block w-full h-auto border-3 border-indigo-200 top-0"/>
+                    <img src={props.object.images.horizontal[i]} alt="" className="block w-full h-auto top-0"/>
                 )
         }
 
         for (let i = 0; i < props.object.images.vertical.length; i++) {
             imagesv.push(
-                <img src={props.object.images.vertical[i]} alt="" className="block w-full h-auto border-3 border-indigo-200 top-0"/>
+                <img src={props.object.images.vertical[i]} alt="" className="block w-full h-auto top-0"/>
             )
         }
     }
