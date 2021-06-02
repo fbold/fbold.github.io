@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.ebef6f15.chunk.css",
-    "main.js": "/static/js/main.5aa183cb.chunk.js",
-    "main.js.map": "/static/js/main.5aa183cb.chunk.js.map",
+    "main.js": "/static/js/main.6fd76dc8.chunk.js",
+    "main.js.map": "/static/js/main.6fd76dc8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84ec8e64.js",
     "runtime-main.js.map": "/static/js/runtime-main.84ec8e64.js.map",
     "static/js/2.8eba1f8c.chunk.js": "/static/js/2.8eba1f8c.chunk.js",
@@ -14,11 +14,12 @@
     "static/media/creature-animated.68838c17.gif": "/static/media/creature-animated.68838c17.gif",
     "static/media/creature2.e8514a78.png": "/static/media/creature2.e8514a78.png",
     "static/media/game1.6665df1a.jpg": "/static/media/game1.6665df1a.jpg",
+    "static/media/landscape.4d6b4ae7.gif": "/static/media/landscape.4d6b4ae7.gif",
     "static/media/lmgtfy-page.a7706f2c.png": "/static/media/lmgtfy-page.a7706f2c.png",
     "static/media/lmgtfy2.39683847.png": "/static/media/lmgtfy2.39683847.png",
     "static/media/react-gif.86b75615.gif": "/static/media/react-gif.86b75615.gif",
     "static/media/sigmo-preview-portfolio.36a619d3.gif": "/static/media/sigmo-preview-portfolio.36a619d3.gif",
-    "static/media/sigmo-preview2-portfolio.365b9005.gif": "/static/media/sigmo-preview2-portfolio.365b9005.gif",
+    "static/media/sigmo-preview3.76cab303.gif": "/static/media/sigmo-preview3.76cab303.gif",
     "static/media/sirenhead.09fd9bd4.png": "/static/media/sirenhead.09fd9bd4.png",
     "static/media/stove.b731a376.png": "/static/media/stove.b731a376.png"
   },
@@ -26,6 +27,6 @@
     "static/js/runtime-main.84ec8e64.js",
     "static/js/2.8eba1f8c.chunk.js",
     "static/css/main.ebef6f15.chunk.css",
-    "static/js/main.5aa183cb.chunk.js"
+    "static/js/main.6fd76dc8.chunk.js"
   ]
 }
