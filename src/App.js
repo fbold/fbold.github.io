@@ -60,7 +60,20 @@ function GridElement(props) {
 }
 
 
-
+const ProgressBar = props => {
+    return(
+        <>
+        <div className="w-2/3 m-auto">
+            <p className="font-mono text-lg text-indigo-200">{props.title}</p>
+        </div>
+        <div className="h-4 w-2/3 border-dashed border-2 m-auto align-middle" >
+            <div className={`bg-indigo-300`} style={{width:props.p*10+"%", height:"17px", marginTop:"-2px", marginLeft:"-2px"}} >
+            
+            </div>
+        </div>
+        </>
+    )
+}
 
 
 function Contents(props) {
@@ -103,11 +116,14 @@ function Contents(props) {
 
                     <Title>Skills</Title>
                     <div className="relative w-full m-auto lg:w-2/3">
-                        <TextElement c="false">
-                            JavaScript:
-                            Unity (C#):
-
-                        </TextElement>
+                        <p className="font-mono text-lg text-indigo-200">
+                            <ProgressBar p={6} title="JavaScript"/><br/>
+                            <ProgressBar p={8} title="Unity (C#)"/><br/>
+                            <ProgressBar p={6} title="React"/><br/>
+                            <ProgressBar p={5} title="Git"/><br/>
+                            <ProgressBar p={7} title="Blender"/><br/>
+                            <ProgressBar p={8} title="Python"/><br/>
+                        </p>
                     </div>
 
                     <Title>Contact</Title>
