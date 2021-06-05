@@ -26,13 +26,13 @@
         cursor: pointer; /* Cursor on hover */
         position: relative;
         z-index: 30;
-      }
-      
-      .slider::-moz-range-thumb {
+    }
+    
+        .slider::-moz-range-thumb {
         outline: none;
         background: #818CF8; /* Green background */
         cursor: pointer; /* Cursor on hover */
         position: relative;
         z-index: 30;
-      }
+    }
 }

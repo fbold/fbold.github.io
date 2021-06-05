@@ -1,27 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.33eb841e.chunk.css",
-    "main.js": "/static/js/main.93d09407.chunk.js",
-    "main.js.map": "/static/js/main.93d09407.chunk.js.map",
+    "main.css": "/static/css/main.ebef6f15.chunk.css",
+    "main.js": "/static/js/main.f006f2a8.chunk.js",
+    "main.js.map": "/static/js/main.f006f2a8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84ec8e64.js",
     "runtime-main.js.map": "/static/js/runtime-main.84ec8e64.js.map",
-    "static/js/2.8d3df345.chunk.js": "/static/js/2.8d3df345.chunk.js",
-    "static/js/2.8d3df345.chunk.js.map": "/static/js/2.8d3df345.chunk.js.map",
+    "static/js/2.8eba1f8c.chunk.js": "/static/js/2.8eba1f8c.chunk.js",
+    "static/js/2.8eba1f8c.chunk.js.map": "/static/js/2.8eba1f8c.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.33eb841e.chunk.css.map": "/static/css/main.33eb841e.chunk.css.map",
-    "static/js/2.8d3df345.chunk.js.LICENSE.txt": "/static/js/2.8d3df345.chunk.js.LICENSE.txt",
+    "static/css/main.ebef6f15.chunk.css.map": "/static/css/main.ebef6f15.chunk.css.map",
+    "static/js/2.8eba1f8c.chunk.js.LICENSE.txt": "/static/js/2.8eba1f8c.chunk.js.LICENSE.txt",
+    "static/media/bg-image.df1067e7.png": "/static/media/bg-image.df1067e7.png",
     "static/media/creature-animated.68838c17.gif": "/static/media/creature-animated.68838c17.gif",
     "static/media/creature2.e8514a78.png": "/static/media/creature2.e8514a78.png",
+    "static/media/game1.6665df1a.jpg": "/static/media/game1.6665df1a.jpg",
+    "static/media/landscape.4d6b4ae7.gif": "/static/media/landscape.4d6b4ae7.gif",
     "static/media/lmgtfy-page.a7706f2c.png": "/static/media/lmgtfy-page.a7706f2c.png",
+    "static/media/lmgtfy2.39683847.png": "/static/media/lmgtfy2.39683847.png",
+    "static/media/react-gif.86b75615.gif": "/static/media/react-gif.86b75615.gif",
     "static/media/sigmo-preview-portfolio.36a619d3.gif": "/static/media/sigmo-preview-portfolio.36a619d3.gif",
-    "static/media/sigmo-preview2-portfolio.365b9005.gif": "/static/media/sigmo-preview2-portfolio.365b9005.gif",
+    "static/media/sigmo-preview3.76cab303.gif": "/static/media/sigmo-preview3.76cab303.gif",
     "static/media/sirenhead.09fd9bd4.png": "/static/media/sirenhead.09fd9bd4.png",
     "static/media/stove.b731a376.png": "/static/media/stove.b731a376.png"
   },
   "entrypoints": [
     "static/js/runtime-main.84ec8e64.js",
-    "static/js/2.8d3df345.chunk.js",
-    "static/css/main.33eb841e.chunk.css",
-    "static/js/main.93d09407.chunk.js"
+    "static/js/2.8eba1f8c.chunk.js",
+    "static/css/main.ebef6f15.chunk.css",
+    "static/js/main.f006f2a8.chunk.js"
   ]
 }

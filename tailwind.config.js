@@ -4,7 +4,7 @@ module.exports = {
     options: {
       safelist: [ 'bg-indigo-200', 'bg-indigo-300', 'bg-indigo-400', 'bg-indigo-500', 'bg-indigo-600', 'bg-indigo-700', 'bg-indigo-800',
                   'opacity-10', 'o-20', 'o-30', 'o-40', 'o-50', 'rounded-b-full', 'rounded-t-full', 'col-span-1', 'col-span-2', 'col-span-3',
-                  'z-0', 'z-10', 'z-20', 'z-30', 'z-40']
+                  'z-0', 'z-10', 'z-20', 'z-30', 'z-40', 'md:col-span-1', 'md:col-span-2', 'md:col-span-3','lg:col-span-1', 'lg:col-span-2', 'lg:col-span-3']
     },
   },
   darkMode: false, // or 'media' or 'class'
