@@ -25,10 +25,11 @@ const projects = {
             span: 3,
             title: "Dug In",
             short: `Dug In (working title) is a first person video game I am developing in the Unity game engine that will be my first commercial release. `,
-            long:  `This is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
+            long:  <>This is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
                     that includes gameplay programming, AI and pathfinding using unity's navmesh system, asset creation (modelling, texturing, basic animating), shader development with ShaderGraph, 
                     among other development tasks that a solo indie dev has to do. You play as an isolated man mourning the recent death of his dog, however a strange turn of events leaves you fighting 
-                    off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog.`,
+                    off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog. <br/><br/>
+                    I try to post updates on <a className="underline" href="https://twitter.com/SurakDev" target="_blank" rel="noreferrer">this twitter page.</a> </>,
             images: {
                 cover: [game1],
                 horizontal: [game2],
