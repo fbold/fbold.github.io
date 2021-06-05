@@ -55,7 +55,7 @@ const projects = {
         blender: {
             span: 2,
             title: "3D Modelling",
-            short: `Take a look at some of my blender models I have made!`,
+            short: `Take a look at some of the blender models I have made!`,
             long: `As part of my game development journey, I have had to learn 3D modelling to allow myself to have more control over the style and consistency in style of the game, as well as making the development process more economical (albeit also more time consuming!)
                     I love the asthetic and lore surrounding creatures like sirenhead. Some of my better models include a version of the sirenhead creature (created by Trevor Henderson), another original creature with a similar style, and an old stove prop.`,
             images: {
