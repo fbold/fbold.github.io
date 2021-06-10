@@ -1,15 +1,4 @@
 
-
-const settings = {
-    width: '600px',
-    height: ['250px', '170px'],
-    layout: [1, 4],
-    photos: [],
-    showNumOfRemainingPhotos: false
-};
-
-
-
 const Collage = props => {
     var imagesh = []
     var imagesv = []
@@ -38,7 +27,7 @@ const Collage = props => {
             </div> : null}
             
         </div>
-    );
+    )
 }
 
 export default Collage
