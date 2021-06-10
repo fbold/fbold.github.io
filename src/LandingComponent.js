@@ -1,28 +1,26 @@
 import React from 'react';
 import Rellax from '../node_modules/rellax/rellax.min.js'
 
-function RandInt(min, max) {
+const RandInt = (min, max) => {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function Bar(props) {
-    return (
-        <div
-            key={props.h}
-            className={`rellax flex flex-auto w-full z-0 bg-indigo-${props.c + "00"} ${(props.i === 0 || props.i === 1) ? 'mx-0' : '-mx-px'} rounded${props.loc ? "-" + props.loc : ""}-full`}
-            style={{ 'height': `${props.h}%` }}
-            data-rellax-speed={`${props.s}`}
-            data-rellax-xs-speed={`${props.s * 1.3}`}
-            data-rellax-mobile-speed={`${props.s * 1.3}`}
-            data-rellax-tablet-speed={`${props.s}`}
-            data-rellax-desktop-speed={`${props.s}`}
-        />
-    )
-}
+const Bar = props => (
+    <div
+        key={props.h}
+        className={`rellax flex flex-auto w-full z-0 bg-indigo-${props.c + "00"} ${(props.i === 0 || props.i === 1) ? 'mx-0' : '-mx-px'} rounded${props.loc ? "-" + props.loc : ""}-full`}
+        style={{ 'height': `${props.h}%` }}
+        data-rellax-speed={`${props.s}`}
+        data-rellax-xs-speed={`${props.s * 1.3}`}
+        data-rellax-mobile-speed={`${props.s * 1.3}`}
+        data-rellax-tablet-speed={`${props.s}`}
+        data-rellax-desktop-speed={`${props.s}`}
+    />
+)
 
-function Bars({ minSpeed, maxSpeed, color, extraHeight = 0, zIndex = 20 }) {
+const Bars = ({ minSpeed, maxSpeed, color, extraHeight = 0, zIndex = 20 }) => {
     var barsTop = []
     var barsBot = []
 
@@ -48,7 +46,7 @@ function Bars({ minSpeed, maxSpeed, color, extraHeight = 0, zIndex = 20 }) {
     </>)
 }
 
-function Landing() {
+const Landing = () => {
     const [scroll, setScroll] = React.useState(false)
 
     // Cannot have Rellax creation in here with handleScroll
