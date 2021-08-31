@@ -44,7 +44,7 @@ const App = () => {
     <Router>
       <Switch>
       {routes.map(route => (
-          <Route path={route.path}>
+          <Route key={route.path} path={route.path}>
             <ExpandedInfo extendedInfoObject={route.textObject}></ExpandedInfo>
           </Route>
         ))}

@@ -73,8 +73,8 @@ const text = {
       long: "This application models the effects of gravity on the orbit of a spacecraft depending on its direction of propulsion and visualises the n body problem. This involved bringing orbital mechanics equations into code in order to accurately simulate a large number of gravitational interactions for one part of the program, as well as allowing for real-time visualization of the orbit of a craft during an orbital manoeuvre.",
       images: {
         cover: [sigmo1],
-        horizontal: [sigmo1, sigmo2],
-        vertical: [],
+        horizontal: [sigmo1],
+        vertical: [sigmo2],
       },
     },
     portfolio: {
@@ -84,10 +84,10 @@ const text = {
       short: "A fully responsive React app styled with tailwind CSS made from scratch.",
       long: <>I take joy in designing and creating webpages, and since my recent foray into React I have really started to enjoy adding functionality to them. I find the component workflow extremely satisfying and it makes representing dynamic information in UI so much easier and intuitive.
            This site was made in about a week and I'm very happy with how it turned out. It's helped me refine my git skills as well as put into practice some of my recently obtained React knowledge.
-           <img src={portfolio2} alt="" className="block m-auto w-1/3 h-auto top-0"/></>,
+           </>,
       images: {
         cover: [portfolio1],
-        horizontal: [],
+        horizontal: [portfolio2],
         vertical: [],
       },
     },
