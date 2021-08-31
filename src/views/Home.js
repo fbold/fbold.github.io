@@ -9,7 +9,7 @@ import Landing from "../LandingComponent"
 import text from "../text"
 
 
-const Contents = props => {
+const Contents = () => {
 
   Object.keys(text.projects).map(key => {
     const obj = text.projects[key]
@@ -40,7 +40,7 @@ const Contents = props => {
           </div>
 
           <Title>Projects</Title>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 relative px-2 md:px-20 w-full overflow-auto md:gap-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 relative px-2 my-2 md:px-20 w-full overflow-auto md:gap-4 ">
             {Object.keys(text.projects).map(key => {
               const obj = text.projects[key]
               return (
@@ -59,13 +59,14 @@ const Contents = props => {
 
           <Title>Skills</Title>
           <div className="relative w-full m-auto lg:w-2/3">
-            <ProgressBar p={6} title="JavaScript" /><br />
-            <ProgressBar p={9} title="Unity (C#)" /><br />
+            <ProgressBar p={8.3} title="JavaScript" /><br />
+            <ProgressBar p={8.2} title="Unity (C#)" /><br />
             <ProgressBar p={8} title="HTML/CSS" /><br />
-            <ProgressBar p={7} title="React" /><br />
-            <ProgressBar p={6} title="Git" /><br />
-            <ProgressBar p={7} title="Blender" /><br />
-            <ProgressBar p={8} title="Python" /><br />
+            <ProgressBar p={8.1} title="React" /><br />
+            <ProgressBar p={8} title="Git" /><br />
+            <ProgressBar p={6} title="Blender" /><br />
+            <ProgressBar p={7} title="Python" /><br />
+            <ProgressBar p={6} title="GIMP/PS" /><br />
           </div>
 
           <Title>Contact</Title>

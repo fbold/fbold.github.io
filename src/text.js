@@ -10,7 +10,7 @@ import blender2 from './img/sirenhead.png'
 import blender3 from './img/creature-animated.gif'
 import blender4 from './img/stove.png'
 
-import portfolio1 from './img/bg-image.png'
+import portfolio1 from './img/bg-image-2.png'
 import portfolio2 from './img/react-gif.gif'
 
 import game1 from './img/game1.jpg'
@@ -82,8 +82,10 @@ const text = {
       span: 1,
       title: "This Page!",
       short: "A fully responsive React app styled with tailwind CSS made from scratch.",
-      long: <>I take joy in designing and creating webpages, and since my recent foray into React I have really started to enjoy adding functionality to them. I find the component workflow extremely satisfying and it makes representing dynamic information in UI so much easier and intuitive.
-           This site was made in about a week and I'm very happy with how it turned out. It's helped me refine my git skills as well as put into practice some of my recently obtained React knowledge.
+      long: <>I take joy in designing and creating websites, and since my foray into React I have really started to enjoy adding functionality to them. I find the component workflow extremely satisfying and it makes representing dynamic information in UI so much easier and intuitive.
+           This site was made in about a week and I'm very happy with how it turned out. It helped me refine my git skills as well as put into practice some of my React knowledge.
+
+           Update: Decided to update the site to use react-router to properly implement a form multi-page navigation!
            </>,
       images: {
         cover: [portfolio1],
