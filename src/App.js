@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useLocation
 } from "react-router-dom";
 import Home from './views/Home';
 import ExpandedInfo from './views/ExpandedInfo';
@@ -39,14 +40,6 @@ import routes from './routes';
 
 
 const App = () => {
-  const [infoPanel, setInfoPanel] = useState(false)
-  const [currentExtendedInfoObject, setCurrentExtendedInfoObject] = useState("")
-
-  // useEffect(() => {
-  //   if(infoPanel) document.body.style.overflow = "hidden";
-  //   else document.body.style.overflow = "";
-  // }, [infoPanel])
-
   return (
     <Router>
       <Switch>
