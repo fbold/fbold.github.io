@@ -6,7 +6,7 @@ const Collage = props => {
   if (props.object) {
     for (let i = 0; i < props.object.images.horizontal.length; i++) {
       imagesh.push(
-        <img key={"h"+i} src={props.object.images.horizontal[i]} alt="" className="block w-full h-full top-0 mb-2"/>
+        <img key={"h"+i} src={props.object.images.horizontal[i]} alt="" className="block w-full h-auto top-0 mb-2"/>
       )
     }
 
