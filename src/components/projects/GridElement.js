@@ -7,10 +7,9 @@ const Image = ({src}) => (
   </div>
 )
 
-const GridElement = ({title, span, onClick, image, children}) => {
-  
+const GridElement = ({title, span, path, onClick, image, children}) => {
   return (
-    <Link to={`/${title}`}>
+    <Link to={`/${path}`}>
       <div
         className={`flex items-start col-span-1 md:col-span-${span} xl:col-span-${span}  relative my-2 h-300 w-full font-bold z-10`}
         data-rellax-speed="2">

@@ -37,6 +37,7 @@ const text = {
       },
     },
     lmgtfy: {
+      span: 1,
       title: "LMGTFY Firefox Addon",
       short: <>A firefox add-on that allows you to immediately obtain a link to a 
           <a className="underline" href="https://letmegooglethat.com/" target="_blank" rel="noreferrer"> LMGTFY </a>

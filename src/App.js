@@ -50,14 +50,15 @@ const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/">
-          <Home/>
-        </Route>
-        {routes.map(route => (
+      {routes.map(route => (
           <Route path={route.path}>
             <ExpandedInfo extendedInfoObject={route.textObject}></ExpandedInfo>
           </Route>
         ))}
+        <Route path="/">
+          <Home/>
+        </Route>
+        
         
       </Switch>
     </Router>
