@@ -12,7 +12,7 @@ const ExpandedInfo = ({ extendedInfoObject }) => {
         <div className={`flex items-center relative h-full w-full font-bold z-10`}>
           <div className="flex relative flex-col md:pt-5 items-start md:items-center w-full h-full overflow-scroll no-scrollbar">
             <div className="hidden md:flex relative mr-auto ml-6 text-left text-gray-200 cursor-pointer items-center"
-              onClick={() => history.length > 2 ? history.goBack() : history.push('/')}>
+              onClick={() => history.length >= 2 ? history.goBack() : history.push('/')}>
               <IoIosArrowBack size={20}/>
               <p className="text-gray-200 font-normal text-lg md:text-xl underline inline">
                 Back

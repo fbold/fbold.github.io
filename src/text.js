@@ -18,7 +18,7 @@ import game2 from './img/landscape.gif'
 
 const text = {
   about: {
-    short: `I'm a young and passionate programmer/game developer looking to get into the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in web development and now working on my first full solo indie title. There's nothing I want more than to start collaborating and contributing to a project bigger than myself.`,
+    short: `I'm a young and passionate web and game developer looking to gather more experience in the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in game development and now developing all the front end for a big client's web app. I look forward to continue my journey in the web development industry, meeting new people and gathering more knowledge as I do.`,
   },
   projects: {
     game: {
@@ -47,7 +47,8 @@ const text = {
           was all that was required, plus a few methods to obtain the information from the selected text and saving urls to the clipboard. <br/><br/>
           The result was a silly addon that allow you to copy text on any page and copy that as a URL to letmegooglethat.com that will show you how to google that text,
           you can alternatively use the addon icon in the toolbar to open a little menu to copy your own question URL as well as toggle "copied to clipboard" notifications.<br/><br/>
-          Code available on <a className="underline" href="https://github.com/Vurak/lmgtfy-add-on" target="_blank" rel="noreferrer"> GitHub</a>.</>,
+          Code available on <a className="underline" href="https://github.com/Vurak/lmgtfy-add-on" target="_blank" rel="noreferrer"> GitHub</a>.<br/>
+          And you can check out the addon <a className="underline" href="https://addons.mozilla.org/en-GB/firefox/addon/lmgtfy-addon/" target="_blank" rel="noreferrer">here</a>.</>,
       images: {
         cover: [lmgtfy1],
         horizontal: [lmgtfy2],
