@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.ebef6f15.chunk.css",
-    "main.js": "/static/js/main.a4e2b0bb.chunk.js",
-    "main.js.map": "/static/js/main.a4e2b0bb.chunk.js.map",
+    "main.css": "/static/css/main.b47ab1d8.chunk.css",
+    "main.js": "/static/js/main.98d12a2d.chunk.js",
+    "main.js.map": "/static/js/main.98d12a2d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84ec8e64.js",
     "runtime-main.js.map": "/static/js/runtime-main.84ec8e64.js.map",
-    "static/js/2.8eba1f8c.chunk.js": "/static/js/2.8eba1f8c.chunk.js",
-    "static/js/2.8eba1f8c.chunk.js.map": "/static/js/2.8eba1f8c.chunk.js.map",
+    "static/js/2.10d474bc.chunk.js": "/static/js/2.10d474bc.chunk.js",
+    "static/js/2.10d474bc.chunk.js.map": "/static/js/2.10d474bc.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.ebef6f15.chunk.css.map": "/static/css/main.ebef6f15.chunk.css.map",
-    "static/js/2.8eba1f8c.chunk.js.LICENSE.txt": "/static/js/2.8eba1f8c.chunk.js.LICENSE.txt",
-    "static/media/bg-image.df1067e7.png": "/static/media/bg-image.df1067e7.png",
+    "static/css/main.b47ab1d8.chunk.css.map": "/static/css/main.b47ab1d8.chunk.css.map",
+    "static/js/2.10d474bc.chunk.js.LICENSE.txt": "/static/js/2.10d474bc.chunk.js.LICENSE.txt",
+    "static/media/bg-image-2.2b49c265.png": "/static/media/bg-image-2.2b49c265.png",
     "static/media/creature-animated.68838c17.gif": "/static/media/creature-animated.68838c17.gif",
     "static/media/creature2.e8514a78.png": "/static/media/creature2.e8514a78.png",
     "static/media/game1.6665df1a.jpg": "/static/media/game1.6665df1a.jpg",
@@ -21,12 +21,13 @@
     "static/media/sigmo-preview-portfolio.36a619d3.gif": "/static/media/sigmo-preview-portfolio.36a619d3.gif",
     "static/media/sigmo-preview3.76cab303.gif": "/static/media/sigmo-preview3.76cab303.gif",
     "static/media/sirenhead.09fd9bd4.png": "/static/media/sirenhead.09fd9bd4.png",
-    "static/media/stove.b731a376.png": "/static/media/stove.b731a376.png"
+    "static/media/stove.b731a376.png": "/static/media/stove.b731a376.png",
+    "static/media/vegsoc.d1af91a1.png": "/static/media/vegsoc.d1af91a1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.84ec8e64.js",
-    "static/js/2.8eba1f8c.chunk.js",
-    "static/css/main.ebef6f15.chunk.css",
-    "static/js/main.a4e2b0bb.chunk.js"
+    "static/js/2.10d474bc.chunk.js",
+    "static/css/main.b47ab1d8.chunk.css",
+    "static/js/main.98d12a2d.chunk.js"
   ]
 }
