@@ -9,7 +9,6 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    
     borderWidth: {
       DEFAULT: '1px',
       '0': '0',
@@ -36,6 +35,7 @@ module.exports = {
         }
       },
       height: {
+        '200': '35rem',
         'full1.5': '150%',
         'full2': '200%',
         'full2.5': '250%',
@@ -48,6 +48,7 @@ module.exports = {
         'full2.5': '250%',
       },
       margin: {
+        '-14p': '-14px',
         '100': '25rem',
         '120': '27.5rem',
         '130': '30rem',
@@ -63,7 +64,8 @@ module.exports = {
     width: ["responsive", "hover", "focus"],
     height: ["responsive", "hover", "focus"],
     extend: {
-      borderWidth: ['hover', 'focus']
+      borderWidth: ['hover', 'focus'],
+      margin: ['hover'],
     },
   },
   plugins: [],
