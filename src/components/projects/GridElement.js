@@ -12,9 +12,9 @@ const GridElement = ({title, span, path, onClick, image, children}) => {
   
   return (
     // <Link to={`/${path}`}>
-      <div onClick={() => history.push('/'+path)}className={`flex items-start col-span-1 md:col-span-1 xl:col-span-1 relative  h-full w-full font-bold z-10`}>
+      <div onClick={() => history.push('/'+path)}className={`flex items-start col-span-1 md:col-span-1 xl:col-span-1 relative h-full w-full font-bold z-10`}>
         <div
-          className="flex flex-col cursor-pointer items-start rounded w-full h-full overflow-hidden bg-indigo-even-darker2 shadow-xl border-6 border-indigo-400 border-t-6 hover:border-t-20 hover:bg-indigo-even-darker duration-200"
+          className="flex flex-col cursor-pointer items-start rounded w-full h-full overflow-hidden bg-indigo-even-darker2 shadow-xl hover:-mb-14p border-6 border-indigo-400 hover:border-t-20 hover:border-indigo-500 hover:bg-indigo-even-darker duration-100"
           onClick={onClick}
         >
           <TextElement title={title}>{children}</TextElement>

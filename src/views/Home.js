@@ -40,7 +40,7 @@ const Contents = () => {
           </div>
 
           <Title>Projects</Title>
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 relative px-2 my-2 md:px-20 w-full overflow-auto md:gap-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 relative px-2 my-2 md:px-20 w-full overflow-auto gap-2 md:gap-4 ">
             {Object.keys(text.projects).map(key => {
               const obj = text.projects[key]
               return (

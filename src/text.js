@@ -16,6 +16,8 @@ import portfolio2 from './img/react-gif.gif'
 import game1 from './img/game1.jpg'
 import game2 from './img/landscape.gif'
 
+import vegsoc1 from './img/vegsoc.png'
+
 const text = {
   about: {
     short: `I'm a young and passionate web and game developer looking to gather more experience in the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in game development and now developing all the front end for a big client's web app. I look forward to continue my journey in the web development industry, meeting new people and gathering more knowledge as I do.`,
@@ -94,7 +96,22 @@ const text = {
         vertical: [],
       },
     },
-  
+    vegsoc: {
+      bgfixed: true,
+      span: 1,
+      title: "Society Web Portal",
+      short: "Currently working on a complete web portal for the vegan and vegetarian society at the University of Southampton.",
+      long: <>I love having side projects to work on and try out new technologies or practice some skills. Most recently I've been working on a web portal for VegSoc society
+              members to know what events are going on, what society books are available for borrowing, vote on events for the future, etc.
+              This will give me a chance to develop my back end skills as well as creating a complete user authentication and profile system from scratch.
+              It also gives me a bit of a creative outlet and a space to try out cool CSS libraries or experiment with funky animations.
+           </>,
+      images: {
+        cover: [vegsoc1],
+        horizontal: [vegsoc1],
+        vertical: [],
+      },
+    },
   }
 }
 

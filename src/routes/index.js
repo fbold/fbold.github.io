@@ -20,6 +20,10 @@ const routes = [
     path: '/portfolio',
     textObject: text.projects.portfolio
   },
+  {
+    path: '/vegsoc',
+    textObject: text.projects.vegsoc
+  },
 
 ]
 
