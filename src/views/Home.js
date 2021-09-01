@@ -59,11 +59,12 @@ const Contents = () => {
 
           <Title>Skills</Title>
           <div className="relative w-full m-auto lg:w-2/3">
-            <ProgressBar p={8.3} title="JavaScript" /><br />
-            <ProgressBar p={8.2} title="Unity (C#)" /><br />
+            <TextElement c>{'— measured in millimeters of skill-juice :) —'}</TextElement>
+            <ProgressBar p={7.6} title="JavaScript" /><br />
+            <ProgressBar p={8.2} title="React" /><br />
             <ProgressBar p={8} title="HTML/CSS" /><br />
-            <ProgressBar p={8.1} title="React" /><br />
             <ProgressBar p={8} title="Git" /><br />
+            <ProgressBar p={8.4} title="Unity (C#)" /><br />
             <ProgressBar p={6} title="Blender" /><br />
             <ProgressBar p={7} title="Python" /><br />
             <ProgressBar p={6} title="GIMP/PS" /><br />

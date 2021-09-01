@@ -20,7 +20,7 @@ import vegsoc1 from './img/vegsoc.png'
 
 const text = {
   about: {
-    short: `I'm a young and passionate web and game developer looking to gather more experience in the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in game development and now developing all the front end for a big client's web app. I look forward to continue my journey in the web development industry, meeting new people and gathering more knowledge as I do.`,
+    short: `I'm a young and passionate web and game developer looking to gather more experience in the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in game development and now developing all the front end for a big client's web app. I look forward to continue my journey in the web development industry, meeting new people and gathering more knowledge on the way.`,
   },
   projects: {
     vegsoc: {
