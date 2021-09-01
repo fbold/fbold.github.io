@@ -23,18 +23,35 @@ const text = {
     short: `I'm a young and passionate web and game developer looking to gather more experience in the industry and put my skills to use in a professional environment. I've been in love with programming since I started over eight years ago; from messing about with Arduino to starting my journey in game development and now developing all the front end for a big client's web app. I look forward to continue my journey in the web development industry, meeting new people and gathering more knowledge as I do.`,
   },
   projects: {
-    game: {
-      span: 3,
-      title: "Dug In",
-      short: `Dug In (working title) is a first person video game I am developing in the Unity game engine that will be my first commercial release. `,
-      long:  <>This is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
-          that includes gameplay programming, AI and pathfinding using unity's navmesh system, asset creation (modelling, texturing, basic animating), shader development with ShaderGraph, 
-          among other development tasks that a solo indie dev has to do. You play as an isolated man mourning the recent death of his dog, however a strange turn of events leaves you fighting 
-          off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog. <br/><br/>
-          I try to post updates on <a className="underline" href="https://twitter.com/SurakDev" target="_blank" rel="noreferrer">this twitter page.</a> </>,
+    vegsoc: {
+      bgfixed: true,
+      span: 1,
+      title: "Society Web Portal",
+      short: "Currently working on a complete web portal for the vegan and vegetarian society at the University of Southampton.",
+      long: <>I love having side projects to work on and try out new technologies or practice some skills. Most recently I've been working on a web portal for VegSoc society
+              members to know what events are going on, what society books are available for borrowing, vote on events for the future, etc.
+              This will give me a chance to develop my back end skills as well as creating a complete user authentication and profile system from scratch.
+              It also gives me a bit of a creative outlet and a space to try out cool CSS libraries or experiment with funky animations.
+           </>,
       images: {
-        cover: [game1],
-        horizontal: [game2],
+        cover: [vegsoc1],
+        horizontal: [vegsoc1],
+        vertical: [],
+      },
+    },
+    portfolio: {
+      bgfixed: true,
+      span: 1,
+      title: "This Page!",
+      short: "A fully responsive React app styled with tailwind CSS made from scratch.",
+      long: <>I take joy in designing and creating websites, and since my foray into React I have really started to enjoy adding functionality to them. I find the component workflow extremely satisfying and it makes representing dynamic information in UI so much easier and intuitive.
+           This site was made in about a week and I'm very happy with how it turned out. It helped me refine my git skills as well as put into practice some of my React knowledge.
+
+           Update: Decided to update the site to use react-router to properly implement a form multi-page navigation!
+           </>,
+      images: {
+        cover: [portfolio1],
+        horizontal: [portfolio2],
         vertical: [],
       },
     },
@@ -55,6 +72,21 @@ const text = {
         cover: [lmgtfy1],
         horizontal: [lmgtfy2],
         vertical: [lmgtfy3],
+      },
+    },
+    game: {
+      span: 3,
+      title: "Dug In",
+      short: `Dug In (working title) is a first person video game I am developing in the Unity game engine that will be my first commercial release. `,
+      long:  <>This is my first full indie 3D title made with the Unity engine. I started production in summer 2020 and since then have almost completed work on this fully fledged indie title, 
+          that includes gameplay programming, AI and pathfinding using unity's navmesh system, asset creation (modelling, texturing, basic animating), shader development with ShaderGraph, 
+          among other development tasks that a solo indie dev has to do. You play as an isolated man mourning the recent death of his dog, however a strange turn of events leaves you fighting 
+          off hordes of night creatures defending an otherworldly crystal that has taken the form of your dog. <br/><br/>
+          I try to post updates on <a className="underline" href="https://twitter.com/SurakDev" target="_blank" rel="noreferrer">this twitter page.</a> </>,
+      images: {
+        cover: [game1],
+        horizontal: [game2],
+        vertical: [],
       },
     },
     blender: {
@@ -78,38 +110,6 @@ const text = {
         cover: [sigmo1],
         horizontal: [sigmo1],
         vertical: [sigmo2],
-      },
-    },
-    portfolio: {
-      bgfixed: true,
-      span: 1,
-      title: "This Page!",
-      short: "A fully responsive React app styled with tailwind CSS made from scratch.",
-      long: <>I take joy in designing and creating websites, and since my foray into React I have really started to enjoy adding functionality to them. I find the component workflow extremely satisfying and it makes representing dynamic information in UI so much easier and intuitive.
-           This site was made in about a week and I'm very happy with how it turned out. It helped me refine my git skills as well as put into practice some of my React knowledge.
-
-           Update: Decided to update the site to use react-router to properly implement a form multi-page navigation!
-           </>,
-      images: {
-        cover: [portfolio1],
-        horizontal: [portfolio2],
-        vertical: [],
-      },
-    },
-    vegsoc: {
-      bgfixed: true,
-      span: 1,
-      title: "Society Web Portal",
-      short: "Currently working on a complete web portal for the vegan and vegetarian society at the University of Southampton.",
-      long: <>I love having side projects to work on and try out new technologies or practice some skills. Most recently I've been working on a web portal for VegSoc society
-              members to know what events are going on, what society books are available for borrowing, vote on events for the future, etc.
-              This will give me a chance to develop my back end skills as well as creating a complete user authentication and profile system from scratch.
-              It also gives me a bit of a creative outlet and a space to try out cool CSS libraries or experiment with funky animations.
-           </>,
-      images: {
-        cover: [vegsoc1],
-        horizontal: [vegsoc1],
-        vertical: [],
       },
     },
   }
