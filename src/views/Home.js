@@ -7,6 +7,7 @@ import Footer from "../components/Footer"
 import SocialBar from "../components/SocialBar"
 import Landing from "../LandingComponent"
 import text from "../text"
+import { TechIcon } from "../components/TechIcon"
 
 
 const Contents = () => {
@@ -58,16 +59,27 @@ const Contents = () => {
           </div>
 
           <Title>Skills</Title>
-          <div className="relative w-full m-auto lg:w-2/3">
-            <TextElement c>{'— measured in millimeters of skill-juice :) —'}</TextElement>
-            <ProgressBar p={7.6} title="JavaScript" /><br />
-            <ProgressBar p={8.2} title="React" /><br />
-            <ProgressBar p={8} title="HTML/CSS" /><br />
-            <ProgressBar p={8} title="Git" /><br />
-            <ProgressBar p={8.4} title="Unity (C#)" /><br />
-            <ProgressBar p={6} title="Blender" /><br />
-            <ProgressBar p={7} title="Python" /><br />
-            <ProgressBar p={6} title="GIMP/PS" /><br />
+          <div className="grid grid-flow-col grid-rows-3 md:grid-rows-2 lg:grid-rows-1 gap-2 relative w-full m-auto lg:w-2/3 justify-center">
+              <TechIcon name="react"/>
+              <TechIcon name="js"/>
+              <TechIcon name="html"/>
+              <TechIcon name="css"/>
+              <TechIcon name="tailwind"/>
+              <TechIcon name="node"/>
+              <TechIcon name="git"/>
+              <TechIcon name="python"/>
+              <TechIcon name="unity"/>
+              <TechIcon name="c#"/>
+
+            {/* <TextElement c>{'— measured in millimeters of skill-juice :) —'}</TextElement>
+            //  <ProgressBar p={7.6} title="JavaScript" /><br />
+            //  <ProgressBar p={8.2} title="React" /><br />
+            //  <ProgressBar p={8} title="HTML/CSS" /><br />
+            //  <ProgressBar p={8} title="Git" /><br />
+            //  <ProgressBar p={8.4} title="Unity (C#)" /><br />
+            //  <ProgressBar p={6} title="Blender" /><br />
+            //  <ProgressBar p={7} title="Python" /><br />
+            //  <ProgressBar p={6} title="GIMP/PS" /><br /> */}
           </div>
 
           <Title>Contact</Title>
