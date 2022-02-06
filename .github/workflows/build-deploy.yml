@@ -31,7 +31,7 @@ jobs:
         CI: false
     
     - name: Run tests
-      run: npm run test --if-present
+      run: npm run test --if-present --passWithNoTests
       env:
         CI: false
 
