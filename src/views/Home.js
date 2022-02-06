@@ -59,7 +59,7 @@ const Contents = () => {
           </div>
 
           <Title>Skills</Title>
-          <div className="grid grid-flow-col grid-rows-3 md:grid-rows-2 lg:grid-rows-1 gap-2 relative w-full m-auto lg:w-2/3 justify-center">
+          <div className="grid grid-flow-col grid-rows-3 md:grid-rows-2 gap-2 relative w-full m-auto lg:w-2/3 justify-center">
               <TechIcon name="react"/>
               <TechIcon name="js"/>
               <TechIcon name="html"/>
