@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.72b23b7a.chunk.css",
-    "main.js": "/static/js/main.fffa5323.chunk.js",
-    "main.js.map": "/static/js/main.fffa5323.chunk.js.map",
+    "main.css": "/static/css/main.41dd2db0.chunk.css",
+    "main.js": "/static/js/main.a99049e3.chunk.js",
+    "main.js.map": "/static/js/main.a99049e3.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84ec8e64.js",
     "runtime-main.js.map": "/static/js/runtime-main.84ec8e64.js.map",
     "static/js/2.10d474bc.chunk.js": "/static/js/2.10d474bc.chunk.js",
     "static/js/2.10d474bc.chunk.js.map": "/static/js/2.10d474bc.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.72b23b7a.chunk.css.map": "/static/css/main.72b23b7a.chunk.css.map",
+    "static/css/main.41dd2db0.chunk.css.map": "/static/css/main.41dd2db0.chunk.css.map",
     "static/js/2.10d474bc.chunk.js.LICENSE.txt": "/static/js/2.10d474bc.chunk.js.LICENSE.txt",
     "static/media/bg-image-2.2b49c265.png": "/static/media/bg-image-2.2b49c265.png",
     "static/media/creature-animated.68838c17.gif": "/static/media/creature-animated.68838c17.gif",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.84ec8e64.js",
     "static/js/2.10d474bc.chunk.js",
-    "static/css/main.72b23b7a.chunk.css",
-    "static/js/main.fffa5323.chunk.js"
+    "static/css/main.41dd2db0.chunk.css",
+    "static/js/main.a99049e3.chunk.js"
   ]
 }
