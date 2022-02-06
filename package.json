@@ -20,7 +20,7 @@
     "deploy": "git subtree push --prefix build origin gh-pages",
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "craco test --passWithNoTests",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
