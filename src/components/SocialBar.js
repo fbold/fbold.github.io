@@ -12,7 +12,7 @@ const SocialBar = () => {
                 <a href="https://github.com/Vurak" target="_blank"  rel="noreferrer">{icons.github}</a>
             </div>
             <div className="relative m-auto w-16 h-16 cursor-pointer">
-                <a href="https://www.linkedin.com/in/frederick-old-7a3098171" target="_blank"  rel="noreferrer">{icons.linkedin}</a>
+                <a href="https://www.linkedin.com/in/frederick-old/" target="_blank"  rel="noreferrer">{icons.linkedin}</a>
             </div>
             <div className="relative m-auto w-16 h-16 cursor-pointer">
                 <a className="mailto" href="mailto:frederick.bruce.old@gmail.com" target="_blank"  rel="noreferrer">{icons.mail}</a>
