@@ -26,8 +26,8 @@ export const TechIcon = ({name}) => {
       return <img title="React.js" className="h-20  w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
     case 'git':
       return <img title="Git" className="h-20  w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" />
-    case 'c#':
-      return <img title="C#" className="h-20  w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" />
+    case 'ts':
+      return <img title="TypeScript" className="h-20  w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
     default:
       return null
   }

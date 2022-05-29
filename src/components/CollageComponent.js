@@ -18,7 +18,7 @@ const Collage = props => {
   }
 
   return (
-    <div className="flex relative w-full mx-auto mt-5 flex-col md:flex-row h-auto pb-2 px-2 md:px-5 gap-2">
+    <div className="flex relative mx-auto mt-5 flex-col md:flex-row h-auto pb-2 px-2 md:px-10 gap-2 md:gap-10">
       <div className="block relative m-auto flex-col items-start gap-2">
         {imagesh}
       </div>
