@@ -9,10 +9,6 @@ const routes = [
     textObject: text.projects.lmgtfy
   },
   {
-    path: '/blender',
-    textObject: text.projects.blender
-  },
-  {
     path: '/sigmo',
     textObject: text.projects.sigmo
   },
@@ -21,8 +17,12 @@ const routes = [
     textObject: text.projects.portfolio
   },
   {
-    path: '/vegsoc',
-    textObject: text.projects.vegsoc
+    path: '/crypto_hoards',
+    textObject: text.projects.crypto_hoards
+  },
+  {
+    path: '/into-erebus',
+    textObject: text.projects.into_erebus
   },
 
 ]
