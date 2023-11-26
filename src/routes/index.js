@@ -24,6 +24,10 @@ const routes = [
     path: '/into-erebus',
     textObject: text.projects.into_erebus
   },
+  {
+    path: '/giga-gathering-2023',
+    textObject: text.projects.into_erebus
+  },
 
 ]
 
