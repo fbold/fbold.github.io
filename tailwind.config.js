@@ -60,6 +60,10 @@ module.exports = {
           "even-darker": "#1b1e31",
           "even-darker2": "#0d0f18",
         },
+        wood: {
+          dark: "#402F2F",
+        },
+        linen: "#F1E6DA",
       },
       height: {
         200: "35rem",
@@ -83,10 +87,15 @@ module.exports = {
         0.2: "0.02rem",
       },
       scale: {
-        500: "5",
+        200: "2",
+        250: "2.5",
       },
       transitionProperty: {
         height: "height",
+      },
+      fontFamily: {
+        nightshade: ["Nightshade"],
+        estonia: ["Estonia"],
       },
     },
   },
