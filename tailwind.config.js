@@ -64,6 +64,7 @@ module.exports = {
           dark: "#402F2F",
         },
         linen: "#F1E6DA",
+        ink: "#27221f",
       },
       height: {
         200: "35rem",

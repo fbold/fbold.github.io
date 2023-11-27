@@ -27,7 +27,7 @@ const TheGigaGathering = () => {
         }}
       >
         <div
-          className={`pointer-events-none absolute z-20 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-20 h-20 rounded-full bg-linen p-2 border-4 border-yellow-400`}
+          className={`pointer-events-none absolute z-20 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-20 h-20 rounded-full bg-red-900 p-2 border-4 border-yellow-400`}
         >
           <img src={gotg23short} alt="" className=""></img>
         </div>
@@ -84,22 +84,63 @@ const TheGigaGathering = () => {
           transitionTimingFunction: "cubic-bezier(.02,.13,.28,-0.08)",
         }}
       ></div>
-      <div className="absolute w-full z-0 h-full bg-linen flex flex-col justify-center items-center">
-        <div className="font-estonia text-4xl align-middle leading-none font-bold text-indigo-even-darker2 w-full text-center break-normal m-5">
-          Dear friend,
-          <br />
-          You are hereby invited to
-          <br />
-          the first — and possibly only
-          <br />
-          <img className="" src={gotg23} alt="" />
-          <br />
-          on the
-          <br />
-          31st December 2023
+      <div
+        className={`${
+          locked ? "" : "overflow-scroll"
+        } absolute w-full z-0 h-full`}
+      >
+        <div className="relative w-full z-0 h-full bg-linen flex flex-col justify-center items-center">
+          <div className="font-estonia text-3xl align-middle flex flex-col leading-none font-bold text-ink justify-items-center w-full text-center m-5">
+            Dear friend,
+            <br />
+            You are hereby invited to
+            <br />
+            the first — and possibly only
+            <br />
+            <img className="max-h-64 mx-auto px-4" src={gotg23} alt="" />
+            31st December 2023
+          </div>
         </div>
-        <div className="font-estonia text-4xl leading-none font-bold text-indigo-even-darker2 w-full text-center">
-          Would you like more details?
+        <div className="absolute bottom-2 font-estonia text-4xl leading-none font-bold text-ink w-full text-center flex justify-center flex-col items-center">
+          Details
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="30"
+            // className="w-14"
+            viewBox="0 5 16 10"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"
+            />
+          </svg>
+        </div>
+        <div className="w-full z-0 h-full bg-linen flex flex-col justify-center items-center">
+          <div className="font-estonia text-3xl align-middle flex flex-col leading font-extrabold text-ink justify-items-center w-full text-center m-5 px-3">
+            <p className="py-5">
+              A night to share friendship, stories, and love. <br /> Come with a
+              truly open heart and mind.
+            </p>
+            <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
+            <p className="py-5">
+              You'll be fed and bedded. <br /> Feel free to bring drinks though
+              these and other drugs will be provided. <br /> Please, if you do
+              bring something, I would kindly ask you make sure its vegan.
+            </p>
+            <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
+            <p className="py-5">
+              If you have a project or piece of art you'd like to showcase feel
+              free to bring it.
+            </p>
+            <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
+            <p className="py-5">
+              Location: <br />
+              Cowshed, Vilartoli
+            </p>
+            <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
+            <p className="py-5">More details to follow...</p>
+          </div>
         </div>
       </div>
     </div>
