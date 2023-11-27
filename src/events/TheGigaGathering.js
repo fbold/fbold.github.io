@@ -7,10 +7,23 @@ const COUNT = 28
 const TheGigaGathering = () => {
   const [locked, setLocked] = useState(true)
   const [locks, setLocks] = useState(new Array(COUNT).fill(1))
+  const [password, setPassword] = useState("")
 
-  const unlock = () => {
-    setLocks(new Array(COUNT).fill(!locked))
-    setLocked((c) => !c)
+  const unlock = async () => {
+    setTimeout(() => {
+      setLocks(new Array(COUNT).fill(!locked))
+      setLocked((c) => !c)
+    }, 300)
+  }
+
+  const submit = (e) => {
+    e.preventDefault()
+    if (password === "gen") {
+      unlock()
+      setPassword("")
+    } else {
+      setPassword("")
+    }
   }
 
   return (
@@ -21,7 +34,7 @@ const TheGigaGathering = () => {
           ${""}`}
         style={{
           transform: locked ? "translateY(0)" : "translateY(-200%)",
-          transitionDelay: "5.6s",
+          transitionDelay: "6.1s",
           transitionDuration: "2s",
           transitionTimingFunction: "cubic-bezier(.02,.13,.28,-0.08)",
         }}
@@ -32,17 +45,26 @@ const TheGigaGathering = () => {
           <img src={gotg23short} alt="" className=""></img>
         </div>
         <div
-          className={`pointer-events-none absolute z-30 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-28 h-28 rounded-full bg-wood-dark transition-opacity duration-500 
-            delay-500
-        ${locked ? "opacity-100" : "opacity-0"}`}
+          className={`pointer-events-none absolute z-30 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-28 h-28 rounded-full bg-wood-dark transition-opacity duration-2000 delay-1500
+          ${locked ? "opacity-100" : "opacity-0"}`}
         ></div>
-        <button
+        {locked ? (
+          <form onSubmit={submit}>
+            <input
+              autoFocus
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="absolute z-30 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-44 text-center text-4xl font-nightshade h-28 bg-transparent outline-none text-yellow-400"
+            />
+          </form>
+        ) : null}
+        {/* <button
           onClick={unlock}
           className="absolute z-20 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-28 h-28 rounded-full bg-none opacity-0"
-        ></button>
+        ></button> */}
         <div
           className={`z-30 pointer-events-none absolute w-full h-full -bottom-1/2 flex items-center justify-center
-          transition-opacity duration-500
+          transition-opacity duration-2000
         ${locked ? "opacity-0" : "opacity-100"}`}
         >
           {locks.map((locked, i) => {
@@ -50,14 +72,14 @@ const TheGigaGathering = () => {
             return (
               <div
                 key={i}
-                className={`absolute bg-wood-dark rounded-md border-t-4 border-yellow-400 transform transition-transform duration-500 ${
+                className={`absolute bg-wood-dark rounded-t-2xl rounded-b-md border-t-4 border-yellow-400 transform transition-transform duration-500 ${
                   locked ? "-translate-y-1/4" : "-translate-y-full"
                 } ${i + 1 === locks.length ? "" : ""}`}
                 style={{
                   height: "80px",
                   width: "30px",
                   rotate: `${rotation}deg`,
-                  transitionDelay: `${1 + i / 10}s`,
+                  transitionDelay: `${2 + i / 10}s`,
                 }}
               ></div>
             )
@@ -65,7 +87,7 @@ const TheGigaGathering = () => {
         </div>
         <span
           className={`absolute bottom-0 translate-y-full z-10 bg-yellow-400 h-1 w-full
-          transition-opacity duration-500
+          transition-opacity duration-2000
         ${locked ? "opacity-0" : "opacity-100"}`}
         ></span>
         {/* <div
@@ -80,7 +102,7 @@ const TheGigaGathering = () => {
               transform transition-transform duration-1000
               ${locked ? "translate-y-0" : "translate-y-full"}`}
         style={{
-          transitionDelay: "5.5s",
+          transitionDelay: "6s",
           transitionTimingFunction: "cubic-bezier(.02,.13,.28,-0.08)",
         }}
       ></div>
@@ -125,13 +147,8 @@ const TheGigaGathering = () => {
             <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
             <p className="py-5">
               You'll be fed and bedded. <br /> Feel free to bring drinks though
-              these and other drugs will be provided. <br /> Please, if you do
-              bring something, I would kindly ask you make sure its vegan.
-            </p>
-            <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
-            <p className="py-5">
-              If you have a project or piece of art you'd like to showcase feel
-              free to bring it.
+              these and other drugs will be in abundance. <br /> Please, if you
+              do bring something, I would kindly ask you make sure its vegan.
             </p>
             <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
             <p className="py-5">

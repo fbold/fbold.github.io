@@ -66,6 +66,12 @@ module.exports = {
         linen: "#F1E6DA",
         ink: "#27221f",
       },
+      transitionDuration: {
+        2000: "2000ms",
+      },
+      transitionDelay: {
+        1500: "1500ms",
+      },
       height: {
         200: "35rem",
         "full1.5": "150%",
