@@ -3,6 +3,7 @@ import Home from "./views/Home"
 import ExpandedInfo from "./views/ExpandedInfo"
 import routes from "./routes"
 import text from "./text"
+import TheGigaGathering from "./events/TheGigaGathering"
 
 const App = () => {
   return (
@@ -13,6 +14,9 @@ const App = () => {
             <ExpandedInfo extendedInfoObject={project}></ExpandedInfo>
           </Route>
         ))}
+        <Route path="/tgotg23">
+          <TheGigaGathering />
+        </Route>
         <Route path="/">
           <Home />
         </Route>
