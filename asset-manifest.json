@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.6f339c35.chunk.css",
-    "main.js": "/static/js/main.8254e201.chunk.js",
-    "main.js.map": "/static/js/main.8254e201.chunk.js.map",
+    "main.css": "/static/css/main.0cd9078d.chunk.css",
+    "main.js": "/static/js/main.7074d858.chunk.js",
+    "main.js.map": "/static/js/main.7074d858.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.84ec8e64.js",
     "runtime-main.js.map": "/static/js/runtime-main.84ec8e64.js.map",
-    "static/js/2.10d474bc.chunk.js": "/static/js/2.10d474bc.chunk.js",
-    "static/js/2.10d474bc.chunk.js.map": "/static/js/2.10d474bc.chunk.js.map",
+    "static/js/2.a4842623.chunk.js": "/static/js/2.a4842623.chunk.js",
+    "static/js/2.a4842623.chunk.js.map": "/static/js/2.a4842623.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.6f339c35.chunk.css.map": "/static/css/main.6f339c35.chunk.css.map",
-    "static/js/2.10d474bc.chunk.js.LICENSE.txt": "/static/js/2.10d474bc.chunk.js.LICENSE.txt",
+    "static/css/main.0cd9078d.chunk.css.map": "/static/css/main.0cd9078d.chunk.css.map",
+    "static/js/2.a4842623.chunk.js.LICENSE.txt": "/static/js/2.a4842623.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/JimNightshade.a78d7d82.ttf",
     "static/media/bg-image-2.2b49c265.png": "/static/media/bg-image-2.2b49c265.png",
     "static/media/creature-animated.68838c17.gif": "/static/media/creature-animated.68838c17.gif",
     "static/media/creature2.e8514a78.png": "/static/media/creature2.e8514a78.png",
@@ -17,6 +18,8 @@
     "static/media/erebus-1.8521fcbd.png": "/static/media/erebus-1.8521fcbd.png",
     "static/media/erebus-2.90ea8bf2.png": "/static/media/erebus-2.90ea8bf2.png",
     "static/media/game1.6665df1a.jpg": "/static/media/game1.6665df1a.jpg",
+    "static/media/gotg23.b459484b.png": "/static/media/gotg23.b459484b.png",
+    "static/media/gotg23short.ffd310a4.png": "/static/media/gotg23short.ffd310a4.png",
     "static/media/landscape.4d6b4ae7.gif": "/static/media/landscape.4d6b4ae7.gif",
     "static/media/lmgtfy-page.a7706f2c.png": "/static/media/lmgtfy-page.a7706f2c.png",
     "static/media/lmgtfy2.39683847.png": "/static/media/lmgtfy2.39683847.png",
@@ -28,8 +31,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.84ec8e64.js",
-    "static/js/2.10d474bc.chunk.js",
-    "static/css/main.6f339c35.chunk.css",
-    "static/js/main.8254e201.chunk.js"
+    "static/js/2.a4842623.chunk.js",
+    "static/css/main.0cd9078d.chunk.css",
+    "static/js/main.7074d858.chunk.js"
   ]
 }
