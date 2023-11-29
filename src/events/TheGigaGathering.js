@@ -8,19 +8,20 @@ const TheGigaGathering = () => {
   const [locked, setLocked] = useState(true)
   const [locks, setLocks] = useState(new Array(COUNT).fill(1))
   const [password, setPassword] = useState("")
+  const [passwordValid, setPasswordValid] = useState(false)
 
   const unlock = async () => {
     setTimeout(() => {
       setLocks(new Array(COUNT).fill(!locked))
-      setLocked((c) => !c)
-    }, 300)
+      setLocked(false)
+    }, 2000)
   }
 
   const submit = (e) => {
     e.preventDefault()
     if (password === "gen") {
       unlock()
-      setPassword("")
+      setPasswordValid(true)
     } else {
       setPassword("")
     }
@@ -54,7 +55,11 @@ const TheGigaGathering = () => {
               autoFocus
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="absolute z-30 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2 w-44 text-center text-4xl font-nightshade h-28 bg-transparent outline-none text-yellow-400"
+              disabled={passwordValid}
+              className={`absolute z-30 bottom-0 left-1/2 block transform -translate-x-1/2 translate-y-1/2
+                        w-44 text-center text-4xl font-nightshade h-28 bg-transparent outline-none text-yellow-400
+                        transitiom-opacity duration-1000 delay-1000
+                        ${passwordValid ? "opacity-0" : "opacity-100"}`}
             />
           </form>
         ) : null}
@@ -153,10 +158,12 @@ const TheGigaGathering = () => {
             <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
             <p className="py-5">
               Location: <br />
-              Cowshed, Vilartoli
+              Cowshed, Vilartolí
             </p>
             <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
-            <p className="py-5">More details to follow...</p>
+            <p className="py-5">Please RSVP before the 20th of December</p>
+            <span className="w-16 h-0.5 bg-ink rounded-lg mx-auto"></span>
+            <p className="py-5">More details to come</p>
           </div>
         </div>
       </div>

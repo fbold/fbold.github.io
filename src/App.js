@@ -14,8 +14,8 @@ const App = () => {
             <ExpandedInfo extendedInfoObject={project}></ExpandedInfo>
           </Route>
         ))}
-        <Route path="/the-giga-gathering">
-          <TheGigaGathering/>
+        <Route path="/tgotg23">
+          <TheGigaGathering />
         </Route>
         <Route path="/">
           <Home />
