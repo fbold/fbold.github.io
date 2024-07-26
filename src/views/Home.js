@@ -35,12 +35,12 @@ const Contents = () => {
           </div>
 
           <Title>Skills</Title>
-          <div className="grid grid-flow-col grid-rows-3 md:grid-rows-2 gap-2 relative w-full m-auto lg:w-2/3 justify-center">
+          <div className="flex flex-grow-0 gap-2 relative w-full m-auto lg:w-2/3 justify-center">
             <TechIcon name="react" />
+            <TechIcon name="next" />
+            <TechIcon name="docker" />
             <TechIcon name="js" />
             <TechIcon name="ts" />
-            <TechIcon name="html" />
-            <TechIcon name="css" />
             <TechIcon name="tailwind" />
             <TechIcon name="node" />
             <TechIcon name="git" />
@@ -63,7 +63,7 @@ const Contents = () => {
             <SocialBar />
           </div>
 
-          <hr className="mx-auto self-center w-full border-2 mt-7" />
+          {/* <hr className="mx-auto self-center w-full mt-12" /> */}
           <Footer />
         </div>
       </div>

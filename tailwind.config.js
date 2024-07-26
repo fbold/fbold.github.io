@@ -52,7 +52,7 @@ module.exports = {
         purple: {
           dark: "#26004c",
           darker: "#190033",
-          "even-darker": "#0c0019",
+          "even-darker": "#040112",
         },
         indigo: {
           dark: "#373c63",

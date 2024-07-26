@@ -1,3 +1,7 @@
+import gatherbun from "./img/gatherbun-1.png"
+
+import futile from "./img/futile-1.png"
+
 import hoards from "./img/crypto-hoards-2.png"
 
 import lmgtfy1 from "./img/lmgtfy1.png"
@@ -9,7 +13,6 @@ import sigmo2 from "./img/sigmo-preview3.gif"
 
 import blender1 from "./img/creature2.png"
 import blender2 from "./img/sirenhead.png"
-import blender3 from "./img/creature-animated.gif"
 import blender4 from "./img/stove.png"
 
 import portfolio1 from "./img/bg-image-2.png"
@@ -23,9 +26,69 @@ import erebus2 from "./img/erebus-2.png"
 
 const text = {
   about: {
-    short: `Fullstack JS/TS developer with a keen interest in all things web dev. Always learning, both in and out of work. Currently learning: Vue!`,
+    short: `Fullstack JS/TS developer with a keen interest in all things web dev. Always learning. Currently working on futile.me and gatherbun.com`,
   },
   projects: [
+    {
+      bgfixed: true,
+      span: 1,
+      path: "gatherbun",
+      title: "Gatherbun",
+      short:
+        "NextJS app using Prisma with PostgreSQL database all containerized with docker and hosted on VPS with CI/CD deploys using GH Actions.",
+      long: (
+        <>
+          <a href="https://gatherbun.com/" className="underline">
+            gatherbun.com
+          </a>{" "}
+          is a platform I am currently working on that aims to deliver improved
+          virtual invitations for any occasion by taking full advantage of the
+          medium. It's a NextJS app that uses the Prisma ORM with a PostgreSQL
+          database, all containerized with docker and hosted on VPS with CI/CD
+          deploys using GH Actions.
+        </>
+      ),
+      images: {
+        cover: [gatherbun],
+        horizontal: [gatherbun],
+        vertical: [],
+      },
+    },
+    {
+      bgfixed: true,
+      span: 1,
+      path: "futile.me",
+      title: "futile.me",
+      short:
+        "Personal NextJS writing project with custom auth implementation using iron-session, text editing with TipTap",
+      long: (
+        <>
+          <a href="https://futile.me/" className="underline">
+            futile.me
+          </a>{" "}
+          is a personal project I am working on. It's a minimal writing platform
+          that uses the TipTap editor for writing and has a lot of custom CSS.
+          While it's not designed it in mind, it will work on mobile. It's more
+          of a platform entirely for me to use to write, so it is less concerned
+          with UX.
+          <br />
+          <br />
+          It uses iron-session for auth, but I didn't want to use any emails, I
+          wanted classic username+password auth. To make recovery possible and
+          increase security, I implemented a 12-word mnemonic recovery system
+          which you can see when creating a new account.
+          <br />
+          <br />
+          Please not as this is still an in development platform, any data and
+          accounts might be removed before release.
+        </>
+      ),
+      images: {
+        cover: [futile],
+        horizontal: [futile],
+        vertical: [],
+      },
+    },
     {
       bgfixed: true,
       span: 1,
@@ -64,8 +127,11 @@ const text = {
       long: (
         <>
           This project is intended to be a 3D web experience that depicts the
-          tragic events of the Franklin expedition of 1845. <br /> Not yet
-          finished, but repo is, as always,{" "}
+          tragic events of the Franklin expedition of 1845. <br /> It uses
+          react-three-fiber for the 3D graphics, which makes the three.js
+          library available as react components.
+          <br />
+          Not yet finished but the repo is, as always,{" "}
           <a href="https://github.com/vurak/into-erebus" className="underline">
             on my GitHub
           </a>
@@ -78,76 +144,76 @@ const text = {
         vertical: [],
       },
     },
-    {
-      bgfixed: true,
-      span: 1,
-      path: "portfolio",
-      title: "This Page!",
-      short:
-        "A fully responsive React app styled with tailwind CSS made from scratch.",
-      long: (
-        <>
-          One of the first react apps I made was this site. It uses the rellax
-          package for parts of the intro effect. The rest is TailwindCSS.
-        </>
-      ),
-      images: {
-        cover: [portfolio1],
-        horizontal: [portfolio2],
-        vertical: [],
-      },
-    },
-    {
-      span: 1,
-      path: "addon",
-      title: "LMGTFY Firefox Addon",
-      short: (
-        <>
-          A firefox add-on that allows you to immediately obtain a link to a
-          <a
-            className="underline"
-            href="https://letmegooglethat.com/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {" "}
-            LMGTFY{" "}
-          </a>
-          question to send in reply to anyone asking a rudely googleable
-          question.
-        </>
-      ),
-      long: (
-        <>
-          This was a simple project to familiarize myself with the browser addon
-          development workflow. Code available on{" "}
-          <a
-            className="underline"
-            href="https://github.com/Vurak/lmgtfy-add-on"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub
-          </a>
-          .<br />
-          And you can check out the addon{" "}
-          <a
-            className="underline"
-            href="https://addons.mozilla.org/en-GB/firefox/addon/lmgtfy-addon/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            here
-          </a>
-          .
-        </>
-      ),
-      images: {
-        cover: [lmgtfy1],
-        horizontal: [lmgtfy2],
-        vertical: [lmgtfy3],
-      },
-    },
+    // {
+    //   bgfixed: true,
+    //   span: 1,
+    //   path: "portfolio",
+    //   title: "This Page!",
+    //   short:
+    //     "A fully responsive React app styled with tailwind CSS made from scratch.",
+    //   long: (
+    //     <>
+    //       One of the first react apps I made was this site. It uses the rellax
+    //       package for parts of the intro effect. The rest is TailwindCSS.
+    //     </>
+    //   ),
+    //   images: {
+    //     cover: [portfolio1],
+    //     horizontal: [portfolio2],
+    //     vertical: [],
+    //   },
+    // },
+    // {
+    //   span: 1,
+    //   path: "addon",
+    //   title: "LMGTFY Firefox Addon",
+    //   short: (
+    //     <>
+    //       A firefox add-on that allows you to immediately obtain a link to a
+    //       <a
+    //         className="underline"
+    //         href="https://letmegooglethat.com/"
+    //         target="_blank"
+    //         rel="noreferrer"
+    //       >
+    //         {" "}
+    //         LMGTFY{" "}
+    //       </a>
+    //       question to send in reply to anyone asking a rudely googleable
+    //       question.
+    //     </>
+    //   ),
+    //   long: (
+    //     <>
+    //       This was a simple project to familiarize myself with the browser addon
+    //       development workflow. Code available on{" "}
+    //       <a
+    //         className="underline"
+    //         href="https://github.com/Vurak/lmgtfy-add-on"
+    //         target="_blank"
+    //         rel="noreferrer"
+    //       >
+    //         GitHub
+    //       </a>
+    //       .<br />
+    //       And you can check out the addon{" "}
+    //       <a
+    //         className="underline"
+    //         href="https://addons.mozilla.org/en-GB/firefox/addon/lmgtfy-addon/"
+    //         target="_blank"
+    //         rel="noreferrer"
+    //       >
+    //         here
+    //       </a>
+    //       .
+    //     </>
+    //   ),
+    //   images: {
+    //     cover: [lmgtfy1],
+    //     horizontal: [lmgtfy2],
+    //     vertical: [lmgtfy3],
+    //   },
+    // },
     {
       span: 1,
       path: "game-dev",
