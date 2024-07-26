@@ -35,7 +35,7 @@ const Contents = () => {
           </div>
 
           <Title>Skills</Title>
-          <div className="flex flex-grow-0 gap-2 relative w-full m-auto lg:w-2/3 justify-center">
+          <div className="grid grid-flow-col grid-rows-2 gap-2 relative m-auto lg:grid-rows-1 justify-center">
             <TechIcon name="react" />
             <TechIcon name="next" />
             <TechIcon name="docker" />
