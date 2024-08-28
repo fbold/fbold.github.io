@@ -4,9 +4,9 @@ import futile from "./img/futile-1.png"
 
 import hoards from "./img/crypto-hoards-2.png"
 
-import lmgtfy1 from "./img/lmgtfy1.png"
-import lmgtfy3 from "./img/lmgtfy-page.png"
-import lmgtfy2 from "./img/lmgtfy2.png"
+// import lmgtfy1 from "./img/lmgtfy1.png"
+// import lmgtfy3 from "./img/lmgtfy-page.png"
+// import lmgtfy2 from "./img/lmgtfy2.png"
 
 import sigmo1 from "./img/sigmo-preview-portfolio.gif"
 import sigmo2 from "./img/sigmo-preview3.gif"
@@ -15,8 +15,8 @@ import blender1 from "./img/creature2.png"
 import blender2 from "./img/sirenhead.png"
 import blender4 from "./img/stove.png"
 
-import portfolio1 from "./img/bg-image-2.png"
-import portfolio2 from "./img/react-gif.gif"
+// import portfolio1 from "./img/bg-image-2.png"
+// import portfolio2 from "./img/react-gif.gif"
 
 import game1 from "./img/game1.jpg"
 import game2 from "./img/landscape.gif"
@@ -35,7 +35,7 @@ const text = {
       path: "gatherbun",
       title: "Gatherbun",
       short:
-        "NextJS app using Prisma with PostgreSQL database all containerized with docker and hosted on VPS with CI/CD deploys using GH Actions.",
+        "NextJS app using Prisma with PostgreSQL database all containerized with docker and hosted on VPS with CI/CD using GH Actions",
       long: (
         <>
           <a href="https://gatherbun.com/" className="underline">
@@ -45,7 +45,7 @@ const text = {
           virtual invitations for any occasion by taking full advantage of the
           medium. It's a NextJS app that uses the Prisma ORM with a PostgreSQL
           database, all containerized with docker and hosted on VPS with CI/CD
-          deploys using GH Actions.
+          using GH Actions and using Stripe as a payment processor.
         </>
       ),
       images: {
