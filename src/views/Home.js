@@ -34,7 +34,7 @@ const Contents = () => {
             ))}
           </div>
 
-          <Title>Skills</Title>
+          {/* <Title>Skills</Title>
           <div className="grid grid-flow-col grid-rows-2 gap-2 relative m-auto min-w-0 lg:grid-rows-1 justify-center">
             <TechIcon name="react" />
             <TechIcon name="next" />
@@ -46,17 +46,7 @@ const Contents = () => {
             <TechIcon name="git" />
             <TechIcon name="python" />
             <TechIcon name="unity" />
-
-            {/* <TextElement c>{'— measured in millimeters of skill-juice :) —'}</TextElement>
-            //  <ProgressBar p={7.6} title="JavaScript" /><br />
-            //  <ProgressBar p={8.2} title="React" /><br />
-            //  <ProgressBar p={8} title="HTML/CSS" /><br />
-            //  <ProgressBar p={8} title="Git" /><br />
-            //  <ProgressBar p={8.4} title="Unity (C#)" /><br />
-            //  <ProgressBar p={6} title="Blender" /><br />
-            //  <ProgressBar p={7} title="Python" /><br />
-            //  <ProgressBar p={6} title="GIMP/PS" /><br /> */}
-          </div>
+          </div> */}
 
           <Title>Contact</Title>
           <div className="relative w-full m-auto lg:w-2/3 pb-20">
