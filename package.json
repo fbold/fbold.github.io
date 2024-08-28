@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@craco/craco": "^6.1.2",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -12,13 +11,12 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.1",
-    "react-scripts": "4.0.3",
     "rellax": "^1.12.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
     "deploy": "git subtree push --prefix build origin gh-pages",
-    "start": "craco start",
+    "start": "react-scripts start",
     "build": "craco build",
     "test": "craco test --passWithNoTests",
     "eject": "react-scripts eject"
@@ -42,9 +40,7 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^9.8.6",
-    "gh-pages": "^3.2.0",
-    "postcss": "^7.0.35",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
+    "gh-pages": "^6.1.1",
+    "react-scripts": "^5.0.1"
   }
 }
