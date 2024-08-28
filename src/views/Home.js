@@ -35,7 +35,7 @@ const Contents = () => {
           </div>
 
           <Title>Skills</Title>
-          <div className="grid grid-flow-col grid-rows-2 gap-2 relative m-auto lg:grid-rows-1 justify-center">
+          <div className="grid grid-flow-col grid-rows-2 gap-2 relative m-auto min-w-0 lg:grid-rows-1 justify-center">
             <TechIcon name="react" />
             <TechIcon name="next" />
             <TechIcon name="docker" />
@@ -59,12 +59,12 @@ const Contents = () => {
           </div>
 
           <Title>Contact</Title>
-          <div className="relative w-full m-auto lg:w-2/3">
+          <div className="relative w-full m-auto lg:w-2/3 pb-20">
             <SocialBar />
           </div>
 
           {/* <hr className="mx-auto self-center w-full mt-12" /> */}
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </section>
