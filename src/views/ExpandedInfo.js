@@ -8,7 +8,7 @@ const ExpandedInfo = ({ extendedInfoObject }) => {
 
   return (
     <div className="flex w-full no-scrollbar">
-      <div className="flex fixed items-center mt-auto top-0 h-full w-full bg-purple-even-darker z-0">
+      <div className="flex fixed items-center mt-auto top-0 h-full w-full bg-black z-0">
         <div
           className={`flex items-center relative h-full w-full font-bold z-10`}
         >

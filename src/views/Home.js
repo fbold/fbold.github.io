@@ -1,19 +1,16 @@
 import GridElement from "../components/projects/GridElement"
-// import ProgressBar from "../components/ProgressBar"
 import { TextElement } from "../components/TextComponents"
 import { Title } from "../components/TextComponents"
-import Footer from "../components/Footer"
 import SocialBar from "../components/SocialBar"
 import Landing from "../LandingComponent"
 import text from "../text"
-import { TechIcon } from "../components/TechIcon"
 
 const Contents = () => {
   return (
-    <section className="h-screen bg-purple-even-darker">
-      <div className="h-full2 relative items-end justify-items-end">
+    <section className="h-screen bg-black">
+      <div className="h-full1.5 md:h-full2 relative items-end justify-items-end">
         <div className="relative flow flex-row items-end top-0 h-full w-full flex-wrap z-0" />
-        <div className="relative flow flex-row items-end bg-purple-even-darker bottom-0 w-full">
+        <div className="relative flow flex-row items-end bg-black bottom-0 w-full">
           <Title>About me</Title>
           <div className="relative w-full m-auto lg:w-2/3">
             <TextElement c="true">{text.about.short}</TextElement>
