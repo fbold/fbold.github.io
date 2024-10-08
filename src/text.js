@@ -104,7 +104,7 @@ const text = {
           is a Solana Web3 enabled web app that can connect to your solana
           wallet and display your media NFTs. The code is available{" "}
           <a
-            href="https://github.com/vurak/crypto-hoards"
+            href="https://github.com/fbold/crypto-hoards"
             className="underline"
           >
             on my GitHub
@@ -132,7 +132,7 @@ const text = {
           library available as react components.
           <br />
           Not yet finished but the repo is, as always,{" "}
-          <a href="https://github.com/vurak/into-erebus" className="underline">
+          <a href="https://github.com/fbold/into-erebus" className="underline">
             on my GitHub
           </a>
           .
@@ -189,7 +189,7 @@ const text = {
     //       development workflow. Code available on{" "}
     //       <a
     //         className="underline"
-    //         href="https://github.com/Vurak/lmgtfy-add-on"
+    //         href="https://github.com/fbold/lmgtfy-add-on"
     //         target="_blank"
     //         rel="noreferrer"
     //       >

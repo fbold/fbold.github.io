@@ -7,7 +7,7 @@ const Footer = () => (
           className="underline"
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/Vurak/vurak.github.io/"
+          href="https://github.com/fbold/fbold.github.io/"
         >
           GitHub
         </a>

@@ -49,7 +49,7 @@ const SocialBar = () => {
   return (
     <div className="grid grid-flow-col w-min items-center m-auto gap-10 mt-2">
       <div className="relative m-auto w-14 aspect-square cursor-pointer">
-        <a href="https://github.com/Vurak" target="_blank" rel="noreferrer">
+        <a href="https://github.com/fbold" target="_blank" rel="noreferrer">
           {icons.github}
         </a>
       </div>
