@@ -17,7 +17,7 @@ const GridElement = ({ title, span, path, onClick, image, children }) => {
       className={`flex items-start col-span-1 md:col-span-1 xl:col-span-1 relative h-full w-full font-bold z-10`}
     >
       <div
-        className="flex flex-col cursor-pointer items-start rounded w-full h-full overflow-hidden bg-black shadow-xl border-6 border-indigo-400  hover:border-indigo-600 duration-200"
+        className="flex flex-col group cursor-pointer items-start w-full h-full overflow-hidden bg-black shadow-xl border-6 border-indigo-400 hover:border-white duration-200"
         onClick={onClick}
       >
         <TextElement title={title}>{children}</TextElement>

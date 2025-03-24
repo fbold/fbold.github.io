@@ -1,4 +1,4 @@
-import gatherbun from "./img/gatherbun-1.png"
+import gatherbun from "./img/gatherbun-2.png"
 
 import futile from "./img/futile-1.png"
 
@@ -98,10 +98,7 @@ const text = {
         "React app that uses the Solana JSON RPC API to fetch information on your solana wallet, retrieving your NFTs and allowing you to view them within the app",
       long: (
         <>
-          <a href="https://crypto-hoards.com/" className="underline">
-            Crypto Hoards
-          </a>{" "}
-          is a Solana Web3 enabled web app that can connect to your solana
+          Crypto Hoards is (was, now defunct) a Solana Web3 enabled web app that can connect to your solana
           wallet and display your media NFTs. The code is available{" "}
           <a
             href="https://github.com/fbold/crypto-hoards"
@@ -109,7 +106,7 @@ const text = {
           >
             on my GitHub
           </a>
-          .
+          . This was more of a proof of concept and learning how to interact with web3 data.
         </>
       ),
       images: {
